@@ -22,7 +22,7 @@ import { LoginComponent } from './componentes/login/login.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      {path: '' , component: RegistroComponent},
+      {path: '' , component: LoginComponent},
       {path: 'Login' , component: LoginComponent}
     ])
   
