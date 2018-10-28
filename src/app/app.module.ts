@@ -6,6 +6,7 @@ import { RegistroComponent } from './componentes/registro/registro.component';
 import { RouterModule, Routes } from '@angular/router';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './componentes/login/login.component';
 
 
 
@@ -13,14 +14,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    RegistroComponent
+    RegistroComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
-      {path: '' , component: RegistroComponent}])
+      {path: '' , component: RegistroComponent},
+      {path: 'Login' , component: LoginComponent}
+    ])
+  
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
