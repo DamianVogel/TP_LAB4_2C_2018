@@ -43,6 +43,7 @@ $app->add(function ($req, $res, $next) {
                 {                           
                         $ArrayDeParametros = $request->getParsedBody();    
                         
+                        //CAMBIAR CLASE PARA TP COMANDA
                         $resultado = UsuarioJuegos::SignIn($ArrayDeParametros);                        
                 }
                 catch (Exception $e)
@@ -56,7 +57,7 @@ $app->add(function ($req, $res, $next) {
         
 
 
-  
+        
         $app->get('/traerpartidas', function ($request, $response) {
                 $juegos = Juegos::TraerTodosLosJuegos();
                 return $response->withJson($juegos);
