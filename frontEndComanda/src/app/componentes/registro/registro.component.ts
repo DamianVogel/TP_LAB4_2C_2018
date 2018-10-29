@@ -3,6 +3,9 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Validators, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { RegistroService } from '../../servicios/registro.service';
 import { Usuario } from '../../clases/usuario';
+import { BotDetectCaptchaModule } from 'angular-captcha';
+import { CaptchaComponent} from 'angular-captcha';
+
 
 function copiaClave(input: FormControl) {
 
@@ -22,6 +25,8 @@ function copiaClave(input: FormControl) {
 })
 
 export class RegistroComponent implements OnInit {
+
+  //@ViewChild (CaptchaComponent) captchaComponent: CaptchaComponent;
 
   constructor(private builder: FormBuilder,
               private _registro: RegistroService
@@ -64,5 +69,22 @@ export class RegistroComponent implements OnInit {
     alert("Usuario Registrado");
     console.log(this.registroForm.get('email').value); 
   }
+
+  
+ 
+  /**
+   * On form submit.
+   */
+  validate(value, valid): void {
+    
+    // this.captchaComponent.validateUnsafe((isCaptchaCodeCorrect: boolean) => {
+    //   if (isCaptchaCodeCorrect) {
+    //     // Captcha code is correct
+    //   } else {
+    //     // Captcha code is incorrect
+    //   }
+    // });
+  }
+
 
 }

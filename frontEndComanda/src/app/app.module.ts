@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './componentes/login/login.component';
+import { BotDetectCaptchaModule } from 'angular-captcha';
 
 
 
@@ -23,8 +24,14 @@ import { LoginComponent } from './componentes/login/login.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       {path: '' , component: LoginComponent},
-      {path: 'Login' , component: LoginComponent}
-    ])
+      {path: 'Login' , component: LoginComponent},
+      {path: 'Registro' , component: RegistroComponent}
+
+    ]),
+    BotDetectCaptchaModule.forRoot({
+      captchaEndpoint: '/botdetect-java-captcha-api-path-at-server-side/botdetectcaptcha'
+    })
+
   
   
   ],
