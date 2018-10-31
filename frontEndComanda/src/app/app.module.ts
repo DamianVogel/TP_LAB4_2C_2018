@@ -13,7 +13,8 @@ import { SidenavComponent } from './componentes/sidenav/sidenav.component';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-
+import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -28,6 +29,8 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     MatSidenavModule,
+    MatListModule,
+    MatIconModule,
     NoopAnimationsModule,
     RouterModule.forRoot([
       {path: '' , component: LoginComponent}
