@@ -1,7 +1,18 @@
 
 .sidenav-container{
-  width: 400px;
+  /* width: 400px;
   height: 200px;
   margin: 10px;
-  border: 1px solid #555;
+  border: 1px solid #555; */
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+
+
+
+
 }
