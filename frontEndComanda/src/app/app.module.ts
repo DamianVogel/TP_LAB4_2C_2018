@@ -29,7 +29,7 @@ import { BotDetectCaptchaModule } from 'angular-captcha';
 
     ]),
     BotDetectCaptchaModule.forRoot({
-      captchaEndpoint: '/botdetect-java-captcha-api-path-at-server-side/botdetectcaptcha'
+      captchaEndpoint: '\TP_LAB4_2C_2018\backEndComanda\botdetect-php-captcha\lib\simple-botdetect.php'
     })
 
   
