@@ -14,9 +14,16 @@ export interface Section {
 })
 export class SidenavComponent implements OnInit {
 
+   usuario: string;
+
   constructor() { }
 
   ngOnInit() {
+  
+    this.usuario = localStorage.getItem('usuario');
+  
+    
+  
   }
 
   folders: Section[] = [
