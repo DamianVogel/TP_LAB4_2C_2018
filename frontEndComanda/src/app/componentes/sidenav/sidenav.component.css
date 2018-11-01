@@ -1,4 +1,5 @@
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+/* @import url('https://fonts.googleapis.com/css?family=Oswald'); */
 
 
 
@@ -10,15 +11,23 @@
   left: 0;
   right: 0;
   /* background: rgb(187, 113, 113); */
-  font-family: Roboto, Arial, sans-serif;
+  /* font-family: Roboto, Arial, sans-serif; */
+  font-family: 'Oswald', sans-serif;
   background-image: url(../../../assets/imagenes/loginfondo.jpg);
 }
 
 .sidenav-toolbar{
   color: #fff;
   background: rgb(19, 18, 18);
+  font-family: 'Oswald', sans-serif;
   
 }
+
+/* .sidenav-list{
+
+  font-family: 'Oswald', sans-serif;
+
+} */
 
 
 

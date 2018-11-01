@@ -1,4 +1,5 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 
 <mat-drawer-container class="sidenav-container">
   <mat-drawer mode="side" opened>
@@ -8,19 +9,14 @@
         <mat-toolbar-row>
           <span>Bienvenido {{usuario}}</span>
           <mat-icon class="usuario-icon">face</mat-icon>
-        </mat-toolbar-row>
+        </mat-toolbar-row>      
       
         <mat-toolbar-row>
-          <span>Cerrar Sesion</span>
-          <span class="usuario-spacer"></span>
-          <mat-icon class="usuario-icon">cancel</mat-icon>
-        </mat-toolbar-row>
-      
-        <mat-toolbar-row>
-          <span>Third Line</span>
-          <span class="usuario-spacer"></span>
+          <!-- <span>Third Line</span>
+          <span class="usuario-spacer"></span> -->
           <mat-icon class="usuario-icon">favorite</mat-icon>
           <mat-icon class="usuario-icon">delete</mat-icon>
+          <mat-icon class="usuario-icon">cancel</mat-icon>  
         </mat-toolbar-row>
       </mat-toolbar>
 
@@ -30,8 +26,8 @@
 
       
       <!-- ADMINISTRADOR -->
-      <mat-list *ngIf="usuario == 'admin'">
-        <h3 mat-subheader>Usuarios</h3>
+      <mat-list *ngIf="usuario == 'admin'"   >
+        <h3 mat-subheader >Usuarios</h3>
         <mat-list-item *ngFor="let folder of folders">
           <mat-icon mat-list-icon>assignment</mat-icon>
           <h4 mat-line>{{folder.name}}</h4>
