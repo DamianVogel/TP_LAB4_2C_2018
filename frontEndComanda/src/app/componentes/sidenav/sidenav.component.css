@@ -9,15 +9,23 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: #eee;
+  background: rgb(187, 113, 113);
   font-family: Roboto, Arial, sans-serif;
 
-
-
-
 }
+
+.sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
 .mat-list-icon {
   color: rgba(40, 23, 195, 0.54);
+  
 }
 
 .usuario-icon {
@@ -28,3 +36,4 @@
 .usuario-spacer {
   flex: 1 1 auto;
 }
+
