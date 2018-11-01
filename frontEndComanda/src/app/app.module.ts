@@ -15,7 +15,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -31,6 +31,7 @@ import {MatIconModule} from '@angular/material/icon';
     MatSidenavModule,
     MatListModule,
     MatIconModule,
+    MatToolbarModule,
     NoopAnimationsModule,
     RouterModule.forRoot([
       {path: '' , component: LoginComponent}
