@@ -28,3 +28,38 @@ button {
 	border-left: 5px solid #4CAF50;
 }
 
+
+.registro-body{
+    /* background-image: url(../../../assets/imagenes/registrofondo.jpg); */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* background: rgb(187, 113, 113); */
+    /* font-family: Roboto, Arial, sans-serif; */
+    font-family: 'Oswald', sans-serif;
+    background-image: url(../../../assets/imagenes/loginfondo.jpg);
+
+
+
+
+}
+
+
+.registro-form{
+    /* background-image: url(../../../assets/imagenes/registrofondo.jpg); */
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* background: rgb(187, 113, 113); */
+    /* font-family: Roboto, Arial, sans-serif; */
+    font-family: 'Oswald', sans-serif;
+    /* background-image: url(../../../assets/imagenes/loginfondo.jpg); */
+
+
+
+
+}

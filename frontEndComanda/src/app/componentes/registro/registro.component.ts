@@ -10,7 +10,7 @@ import { CaptchaComponent} from 'angular-captcha';
 function copiaClave(input: FormControl) {
 
       if (input.root.get('clave') == null) {
-        alert("prueba");
+        
         return null;
       }
 
@@ -60,7 +60,7 @@ export class RegistroComponent implements OnInit {
   Registrar(){
     
     var usuario = new Usuario(this.registroForm.get('email').value, this.registroForm.get('clave').value);
-    console.log(usuario);
+    
 
     this._registro.Registro(usuario)
     //.subscribe(data =>{})

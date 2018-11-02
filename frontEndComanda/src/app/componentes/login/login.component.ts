@@ -72,4 +72,11 @@ export class LoginComponent implements OnInit {
                 });
         */
       }
-}
+
+    Registrar(){
+        this.router.navigate(['Registro']);
+
+    }
+
+
+    }

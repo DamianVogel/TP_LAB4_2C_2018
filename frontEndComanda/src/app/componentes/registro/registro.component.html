@@ -1,5 +1,9 @@
-<body>
-    <form [formGroup]="registroForm" class="modal-content animate" (ngSubmit)="Registrar()" >
+
+<head>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+<body class="registro-body">
+    <form [formGroup]="registroForm" class="modal-content animate registro-form" (ngSubmit)="Registrar()" >
       <div class="container">
         <label><b>Email</b></label>
         <input type="text" placeholder="Ingresa tu correo" name="email" [formControl]="email" required>
@@ -12,7 +16,12 @@
         <div>
           <button type="submit" class="signupbtn" [disabled]="!registroForm.valid">Registrarme</button>
         </div>
+        <!-- <div>
+          <button type="submit" class="signupbtn" (click)="Registrar()" >Registrarme</button>
+        </div> -->
+
       </div>
-      <botdetect-captcha styleName="exampleCaptcha"></botdetect-captcha>
+      <!-- <botdetect-captcha styleName="exampleCaptcha"></botdetect-captcha> -->
+      <div class="g-recaptcha" data-sitekey="6Lc6P3gUAAAAAP2wTfQl5vPlTP83kIk0PhPKlgvP"></div>
     </form>
 </body>
