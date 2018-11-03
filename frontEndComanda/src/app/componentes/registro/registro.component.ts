@@ -3,6 +3,8 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Validators, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { RegistroService } from '../../servicios/registro.service';
 import { Usuario } from '../../clases/usuario';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 
 
@@ -31,6 +33,9 @@ export class RegistroComponent implements OnInit {
               private _registro: RegistroService
     ) { }
 
+  protected aFormGroup: FormGroup;
+
+
   email = new FormControl('', [
     Validators.required,
     Validators.minLength(5),
@@ -47,13 +52,29 @@ export class RegistroComponent implements OnInit {
     copiaClave
   ]);
 
+  // recaptcha = new FormControl('', [
+  //   Validators.required,
+    
+  // ]);
+
   registroForm: FormGroup = this.builder.group({
     email: this.email,
     clave: this.clave,
     copiaClave: this.copiaClave,
+    // recaptcha: this.recaptcha
   });
 
+
+
+  
+
+
+
   ngOnInit() {
+    this.aFormGroup = this.builder.group({
+      recaptcha: ['', Validators.required]
+    });
+
   }
 
   Registrar(){

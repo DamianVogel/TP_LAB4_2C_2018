@@ -7,7 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './componentes/login/login.component';
-import { BotDetectCaptchaModule } from 'angular-captcha';
+
 import { SidenavComponent } from './componentes/sidenav/sidenav.component';
 //import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
@@ -17,6 +17,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MozoComponent } from './componentes/mozo/mozo.component';
+import { NgxCaptchaModule } from 'ngx-captcha';
 
 
 @NgModule({
@@ -42,9 +43,7 @@ import { MozoComponent } from './componentes/mozo/mozo.component';
       ,{path: 'Registro' , component: RegistroComponent}
       ,{path: 'Side' , component: SidenavComponent}
     ]),
-    BotDetectCaptchaModule.forRoot({
-      captchaEndpoint: '\TP_LAB4_2C_2018\backEndComanda\botdetect-php-captcha\lib\simple-botdetect.php'
-    })
+    NgxCaptchaModule
 
   
   

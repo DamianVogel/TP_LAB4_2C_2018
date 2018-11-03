@@ -20,11 +20,27 @@
               </div>
                 
             </div>
-           
+            
+
+
           </form>
           <div>
               <div class="g-recaptcha" data-sitekey="6Lc6P3gUAAAAAP2wTfQl5vPlTP83kIk0PhPKlgvP"></div>
           </div>
+
+          <!-- <form [formGroup]="aFormGroup">
+              <ngx-recaptcha2
+                [siteKey]="siteKey"
+                [size]="size"
+                [hl]="lang"
+                [theme]="theme"
+                [type]="type"
+                (expire)="handleExpire()"
+                (load)="handleLoad()"
+                (success)="handleSuccess($event)"
+                formControlName="recaptcha">
+              </ngx-recaptcha2>
+            </form> -->
 
       </div>
     </div>
