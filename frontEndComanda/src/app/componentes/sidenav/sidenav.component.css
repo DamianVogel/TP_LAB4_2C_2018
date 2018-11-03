@@ -48,6 +48,18 @@
   font-family: 'Oswald', sans-serif;
 }
 
+/* .sidenav-content-toolbar {
+  position: fixed;
+  top:-10;
+  left: auto;
+  display: flex;
+  height: 100%; 
+  align-items: left;
+  float: right;
+  justify-content: center; 
+  font-family: 'Oswald', sans-serif;
+} */
+
 
 
 .mat-list-icon {
