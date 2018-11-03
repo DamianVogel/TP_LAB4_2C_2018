@@ -1,11 +1,8 @@
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 
 <mat-drawer-container class="sidenav-container">
   <mat-drawer mode="side" opened>
 
     <mat-toolbar class="sidenav-toolbar">
-    <!-- <mat-toolbar color="dark"> -->
         <mat-toolbar-row>
           <span>Bienvenido {{usuario}}</span>
           <mat-icon class="usuario-icon">face</mat-icon>
@@ -26,20 +23,25 @@
 
       
       <!-- ADMINISTRADOR -->
-      <mat-list *ngIf="usuario == 'admin'"   >
-        <h3 mat-subheader >Usuarios</h3>
-        <mat-list-item *ngFor="let folder of folders">
-          <mat-icon mat-list-icon>assignment</mat-icon>
-          <h4 mat-line>{{folder.name}}</h4>
-          <p mat-line> {{folder.updated | date}} </p>
-        </mat-list-item>
+      <mat-list  *ngIf="usuario == 'admin'"   >
+        
+        <h3 mat-subheader class="h3-subheader" >La Comanda</h3>
+        
+          <mat-list-item *ngFor="let folder of folders" class="mat-list">
+            <mat-icon mat-list-icon>assignment</mat-icon>
+            <h4 mat-line>{{folder.name}}</h4>
+            <p mat-line> {{folder.updated | date}} </p>
+          </mat-list-item>
+        
         <mat-divider></mat-divider>
-        <h3 mat-subheader>Reportes</h3>
-        <mat-list-item *ngFor="let note of notes">
-          <mat-icon mat-list-icon>note</mat-icon>
-          <h4 mat-line>{{note.name}}</h4>
-          <p mat-line> {{note.updated | date}} </p>
-        </mat-list-item>
+        
+        <h3 mat-subheader class="h3-subheader">Reportes</h3>
+          
+          <mat-list-item *ngFor="let note of notes" class="mat-list">
+            <mat-icon mat-list-icon>note</mat-icon>
+            <h4 mat-line>{{note.name}}</h4>
+            <p mat-line> {{note.updated | date}} </p>
+          </mat-list-item>
       </mat-list>
 
       <!-- MESERO -->

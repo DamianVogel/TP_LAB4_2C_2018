@@ -28,15 +28,15 @@ export class SidenavComponent implements OnInit {
 
   folders: Section[] = [
     {
-      name: 'EMPLEADOS',
+      name: 'Empleados',
       updated: new Date('1/1/16'),
     },
     {
-      name: 'CLIENTES',
+      name: 'Clientes',
       updated: new Date('1/17/16'),
     },
     {
-      name: 'PEDIDOS',
+      name: 'Pedidos',
       updated: new Date('1/28/16'),
     }
   ];
@@ -46,7 +46,7 @@ export class SidenavComponent implements OnInit {
       updated: new Date('2/20/16'),
     },
     {
-      name: 'EXCEL',
+      name: 'Excel',
       updated: new Date('1/18/16'),
     }
   ];
