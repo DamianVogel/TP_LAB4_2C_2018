@@ -28,9 +28,15 @@
         <h3 mat-subheader class="h3-subheader" >La Comanda</h3>
         
           <mat-list-item *ngFor="let folder of folders" class="mat-list">
-            <mat-icon mat-list-icon>assignment</mat-icon>
-            <h4 mat-line>{{folder.name}}</h4>
-            <p mat-line> {{folder.updated | date}} </p>
+                      
+              <mat-icon mat-list-icon>assignment</mat-icon>
+              <button mat-raised-button class="mat-list-button">
+                
+                <h4 mat-line>{{folder.name}}</h4>
+                <!-- <p mat-line> {{folder.updated | date}} </p> -->
+              </button>             
+            
+          
           </mat-list-item>
         
         <mat-divider></mat-divider>

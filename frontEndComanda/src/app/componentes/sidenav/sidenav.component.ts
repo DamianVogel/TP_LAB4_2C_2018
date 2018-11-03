@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatButtonModule} from '@angular/material/button';
 
 export interface Section {
   name: string;

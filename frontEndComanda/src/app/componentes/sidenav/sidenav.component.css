@@ -64,3 +64,9 @@
   flex: 1 1 auto;
 }
 
+.mat-list-button button,
+.mat-list-button a {
+  margin-right: 8px;
+  display: flex;
+
+}
