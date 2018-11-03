@@ -16,6 +16,7 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { MozoComponent } from './componentes/mozo/mozo.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     AppComponent,
     RegistroComponent,
     LoginComponent,
-    SidenavComponent
+    SidenavComponent,
+    MozoComponent
   ],
   imports: [
     BrowserModule,
