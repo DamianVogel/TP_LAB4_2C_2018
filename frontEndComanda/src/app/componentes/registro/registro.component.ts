@@ -4,7 +4,7 @@ import { Validators, FormBuilder, FormControl, FormGroup } from '@angular/forms'
 import { RegistroService } from '../../servicios/registro.service';
 import { Usuario } from '../../clases/usuario';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgxCaptchaModule } from 'ngx-captcha';
+
 
 
 
@@ -27,57 +27,51 @@ function copiaClave(input: FormControl) {
 
 export class RegistroComponent implements OnInit {
 
- 
+  email:FormControl;
+  clave:FormControl;
+  copiaClave: FormControl;
+  registroForm: FormGroup;
 
   constructor(private builder: FormBuilder,
               private _registro: RegistroService
-    ) { }
-
-  protected aFormGroup: FormGroup;
-
-
-  email = new FormControl('', [
-    Validators.required,
-    Validators.minLength(5),
-    Validators.email
-  ]);
-  
-  clave = new FormControl('', [
-    Validators.required,
-   Validators.minLength(4)
-  ]);
-  
-  copiaClave = new FormControl('', [
-    Validators.required,
-    copiaClave
-  ]);
-
-  // recaptcha = new FormControl('', [
-  //   Validators.required,
+    ) {
+      
     
-  // ]);
-
-  registroForm: FormGroup = this.builder.group({
-    email: this.email,
-    clave: this.clave,
-    copiaClave: this.copiaClave,
-    // recaptcha: this.recaptcha
-  });
 
 
-
-  
-
+     }
 
 
   ngOnInit() {
-    this.aFormGroup = this.builder.group({
-      recaptcha: ['', Validators.required]
+    this.email = new FormControl('', [
+      Validators.required,
+      Validators.minLength(5),
+      Validators.email
+    ]);
+    
+    this.clave = new FormControl('', [
+      Validators.required,
+     Validators.minLength(4)
+    ]);
+    
+    this.copiaClave = new FormControl('', [
+      Validators.required,
+      copiaClave
+    ]);
+  
+   
+  
+    this.registroForm = this.builder.group({
+      email: this.email,
+      clave: this.clave,
+      copiaClave: this.copiaClave,
+      
     });
+    
 
   }
 
-  Registrar(){
+  onSubmit(){
     
     var usuario = new Usuario(this.registroForm.get('email').value, this.registroForm.get('clave').value);
     
@@ -90,6 +84,7 @@ export class RegistroComponent implements OnInit {
     console.log(this.registroForm.get('email').value); 
   }
 
+  
   
  
   
