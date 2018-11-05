@@ -18,6 +18,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MozoComponent } from './componentes/mozo/mozo.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { ReporteHighchartComponent } from './componentes/reporte-highchart/reporte-highchart.component';
+import { ChartModule } from 'angular-highcharts';
 
 
 @NgModule({
@@ -26,7 +28,8 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     RegistroComponent,
     LoginComponent,
     SidenavComponent,
-    MozoComponent
+    MozoComponent,
+    ReporteHighchartComponent
   ],
   imports: [
     BrowserModule,
@@ -42,9 +45,10 @@ import { NgxCaptchaModule } from 'ngx-captcha';
       ,{path: 'Login' , component: LoginComponent}
       ,{path: 'Registro' , component: RegistroComponent}
       ,{path: 'Side' , component: SidenavComponent}
+      ,{path: 'Reporte' , component: ReporteHighchartComponent}
     ]),
-    NgxCaptchaModule
-
+    NgxCaptchaModule,
+    ChartModule
   
   
   ],
