@@ -89,7 +89,7 @@ export class SidenavComponent implements OnInit {
   }
 
   Emiter(){
-    alert("hola");
+    
     this.muestraSide=true;
 
 

@@ -70,6 +70,7 @@
 .usuario-icon {
   padding: 0 14px;
   cursor: pointer;
+  font-size: 30px; 
 }
 
 .usuario-spacer {
@@ -82,3 +83,11 @@
   display: flex;
 
 }
+
+mat-drawer{
+width:  auto;
+
+
+}
+
+
