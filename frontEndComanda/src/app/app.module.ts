@@ -20,7 +20,9 @@ import { MozoComponent } from './componentes/mozo/mozo.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { ReporteHighchartComponent } from './componentes/reporte-highchart/reporte-highchart.component';
 import { ChartModule } from 'angular-highcharts';
+import { Angular2CsvModule } from 'angular2-csv';
 import { AdminComponent } from './componentes/admin/admin.component';
+import { CsvComponent } from './componentes/csv/csv.component';
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { AdminComponent } from './componentes/admin/admin.component';
     SidenavComponent,
     MozoComponent,
     ReporteHighchartComponent,
-    AdminComponent
+    AdminComponent,
+    CsvComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ import { AdminComponent } from './componentes/admin/admin.component';
       ,{path: 'Reporte' , component: ReporteHighchartComponent}
     ]),
     NgxCaptchaModule,
-    ChartModule
+    ChartModule,
+    Angular2CsvModule
   
   
   ],
