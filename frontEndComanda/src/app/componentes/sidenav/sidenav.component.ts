@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatButtonModule} from '@angular/material/button';
+
 
 export interface Section {
   name: string;
@@ -18,13 +17,13 @@ export class SidenavComponent implements OnInit {
    usuario: string;
    folders: Section [];
    notes: Section [];
-
+   muestraSide:boolean = false;
   constructor() { }
 
   ngOnInit() {
   
     //this.usuario = localStorage.getItem('usuario');
-    this.usuario = 'mozo';
+    this.usuario = 'admin';
     
     this.ItemsSideNav(this.usuario);
 
@@ -50,7 +49,7 @@ export class SidenavComponent implements OnInit {
               ];
               this.notes = [
                 {
-                  name: 'PDF',
+                  name: 'Reporte HighChart',
                   updated: new Date('2/20/16'),
                 },
                 {
@@ -87,7 +86,14 @@ export class SidenavComponent implements OnInit {
       
       }
     
-    }
+  }
+
+  Emiter(){
+    alert("hola");
+    this.muestraSide=true;
+
+
+  }
 
 
 

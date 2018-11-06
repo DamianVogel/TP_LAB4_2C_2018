@@ -20,6 +20,7 @@ import { MozoComponent } from './componentes/mozo/mozo.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
 import { ReporteHighchartComponent } from './componentes/reporte-highchart/reporte-highchart.component';
 import { ChartModule } from 'angular-highcharts';
+import { AdminComponent } from './componentes/admin/admin.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ChartModule } from 'angular-highcharts';
     LoginComponent,
     SidenavComponent,
     MozoComponent,
-    ReporteHighchartComponent
+    ReporteHighchartComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
