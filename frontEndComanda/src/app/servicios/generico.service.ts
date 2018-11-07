@@ -3,10 +3,11 @@ import { Injectable } from '@angular/core';
 import {Http ,Response} from '@angular/http';
 //import 'rxjs/add/operator/toPromise';
 
-//import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs/Observable';
 //import 'rxjs/add/operator/map';
 //import 'rxjs/add/operator/catch';
 import { catchError, map, tap } from 'rxjs/operators';
+
 
 
 
@@ -33,22 +34,36 @@ export class GenericoService {
   }
   */
 
-  public httpPost(metodo:string, objeto:any)
-  {
-    return this.http.post(this.api + metodo, objeto)
-    .pipe(catchError(this.handleError));
-  }
+ public httpGet(metodo:string, objeto:any):Observable<any>{
+  
+
+  return this.http
+  .get(this.api + metodo)
+  .pipe(tap(data => {return this.extraerDatos(data)}));
+  
+}
 
 
-  private extraerDatos(resp:Response) {
+public httpPost(metodo:string, objeto:any):Observable<any>
+{ 
+ 
+  //console.log(metodo,objeto);
+  return this.http.post(this.api + metodo, objeto)
+  .pipe(catchError(this.handleError));
+}
 
-      return resp.json() || {};
 
-  }
-  private handleError(error:Response | any) {
+private extraerDatos(resp:Response) {
 
-      return error;
-  }
+    return resp.json() || {};
+
+}
+private handleError(error:Response | any) {
+
+    return error;
+}
+
+
   
 
 
