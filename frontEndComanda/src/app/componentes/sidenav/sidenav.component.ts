@@ -49,7 +49,7 @@ export class SidenavComponent implements OnInit {
               ];
               this.notes = [
                 {
-                  name: 'Reporte HighChart',
+                  name: 'HighChart',
                   updated: new Date('2/20/16'),
                 },
                 {

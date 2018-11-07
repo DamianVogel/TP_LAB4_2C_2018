@@ -3,7 +3,6 @@
   
   <!-- SIDE -->
   
-
   <mat-drawer mode="side" opened>
 
     
@@ -28,28 +27,63 @@
         
         <h3 mat-subheader class="h3-subheader" >La Comanda</h3>
         
-          <mat-list-item *ngFor="let folder of folders" class="mat-list">
+          <!-- <mat-list-item *ngFor="let folder of folders" class="mat-list">
                       
               <mat-icon mat-list-icon md-36>assignment</mat-icon>
               <button mat-raised-button class="mat-list-button">
                 
                 <h4 mat-line>{{folder.name}}</h4>
-                <!-- <p mat-line> {{folder.updated | date}} </p> -->
-              </button>             
+                <p mat-line> {{folder.updated | date}} </p> 
             
           
+          </mat-list-item> -->
+
+          <mat-list-item  class="mat-list">                     
+            <mat-icon mat-list-icon md-36>assignment_ind</mat-icon>
+            <button mat-raised-button class="mat-list-button">
+              
+              <h4 mat-line>Empleados</h4>
+              
+            </button>                     
+          </mat-list-item>
+
+          <mat-list-item  class="mat-list">                     
+            <mat-icon mat-list-icon md-36>assignment</mat-icon>
+            <button mat-raised-button class="mat-list-button">
+              
+              <h4 mat-line>Pedidos</h4>
+              
+            </button>                     
           </mat-list-item>
         
         <mat-divider></mat-divider>
         
         <h3 mat-subheader class="h3-subheader">Reportes</h3>
           
-          <mat-list-item *ngFor="let note of notes" class="mat-list">
+          <!-- <mat-list-item *ngFor="let note of notes" class="mat-list">
             <mat-icon mat-list-icon md-36>assessment</mat-icon>
             <h4 mat-line (click)="Emiter()">{{note.name}}</h4>
             <p mat-line> {{note.updated | date}} </p>
             
+          </mat-list-item> -->
+          
+          <mat-list-item  class="mat-list">
+            <mat-icon mat-list-icon md-36>assessment</mat-icon>
+            <h4 mat-line (click)="Emiter()">HighChart</h4>
+            <!-- <p mat-line> {{note.updated | date}} </p> -->
+            
           </mat-list-item>
+
+          <mat-list-item  class="mat-list">
+            <mat-icon mat-list-icon md-36>table_chart</mat-icon>
+            <h4 mat-line (click)="Emiter()">CSV</h4>
+            <!-- <p mat-line> {{note.updated | date}} </p> -->
+            
+          </mat-list-item>
+
+
+
+      
       </mat-list>
 
       <!-- MESERO -->
@@ -95,12 +129,16 @@
   
   <mat-drawer-content class="sidenav-content">   
     <div [ngSwitch]="usuario">
+      
       <div *ngSwitchCase="'admin'">
           <app-admin [muestra]="muestraSide"></app-admin>
       </div>
+      
       <div *ngSwitchCase="'mozo'">
           <app-mozo></app-mozo>
       </div>      
+    
     </div>  
   </mat-drawer-content>
+
 </mat-drawer-container>
