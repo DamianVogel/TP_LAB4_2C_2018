@@ -1,47 +1,43 @@
 <?php
 class AccesoDatos
 {
-    private static $_objetoAccesoDatos;
-    private $_objetoPDO;
-    //Aca se encuentra la conexion con la base de datos. 
-
+    private static $ObjetoAccesoDatos;
+    private $objetoPDO;
+ 
     private function __construct()
     {
-        try {
-            //Dentro del contructor le paso los parametros. Lo particular es que es privado para que nadie lo vea. 
-            $this->_objetoPDO = new PDO('mysql:host=localhost;dbname=tp_estacionamiento;charset=utf8', 'root', '', array(PDO::ATTR_EMULATE_PREPARES => false,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
- 
-            $this->_objetoPDO->exec("SET CHARACTER SET utf8");
- 
-        } catch (PDOException $e) {
- 
-            print "Error!!!<br/>" . $e->getMessage();
- 
+        try { 
+            $this->objetoPDO = new PDO('mysql:host=localhost;dbname=laComanda;charset=utf8', 'root', '', array(PDO::ATTR_EMULATE_PREPARES => false,PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $this->objetoPDO->exec("SET CHARACTER SET utf8");
+            } 
+        catch (PDOException $e) { 
+            print "Error!: " . $e->getMessage(); 
             die();
         }
     }
  
     public function RetornarConsulta($sql)
-    {
-
-        return $this->_objetoPDO->prepare($sql);
+    { 
+        return $this->objetoPDO->prepare($sql); 
+    }
+     public function RetornarUltimoIdInsertado()
+    { 
+        return $this->objetoPDO->lastInsertId(); 
     }
  
-    public static function DameUnObjetoAcceso()//singleton
-    {
-        //este es el metodo que devuelve la base de datos.
-        if (!isset(self::$_objetoAccesoDatos)) {       
-            self::$_objetoAccesoDatos = new AccesoDatos(); 
-        }
- 
-        return self::$_objetoAccesoDatos;
-        //puedo hacerle un fetch
+    public static function dameUnObjetoAcceso()
+    { 
+        if (!isset(self::$ObjetoAccesoDatos)) {          
+            self::$ObjetoAccesoDatos = new AccesoDatos(); 
+        } 
+        return self::$ObjetoAccesoDatos;        
     }
  
-    // Evita que el objeto se pueda clonar
+ 
+     // Evita que el objeto se pueda clonar
     public function __clone()
-    {
-        trigger_error('La clonaci&oacute;n de este objeto no est&aacute; permitida!!!', E_USER_ERROR);
+    { 
+        trigger_error('La clonación de este objeto no está permitida', E_USER_ERROR); 
     }
 }
 ?>
