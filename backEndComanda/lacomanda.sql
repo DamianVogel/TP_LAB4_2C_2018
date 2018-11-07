@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-10-2018 a las 00:45:48
--- Versión del servidor: 10.1.31-MariaDB
--- Versión de PHP: 7.2.4
+-- Tiempo de generación: 07-11-2018 a las 19:11:39
+-- Versión del servidor: 10.1.22-MariaDB
+-- Versión de PHP: 7.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,9 +42,10 @@ CREATE TABLE `empleados` (
 --
 
 INSERT INTO `empleados` (`id`, `usuario`, `clave`, `sector`, `estado`, `perfil`) VALUES
-(1, 'amorelli', '1234', 'Dueño', 'Activo', 'admin'),
-(9, 'elbarman1', '1234', 'barra', 'suspendido', 'empleado'),
-(10, 'candyman', '1234', 'candy bar', 'Activo', 'empleado');
+(1, 'ADMIN', '1234', 'Dueño', 'Activo', 'admin'),
+(9, 'BARMAN', '1234', 'barra', 'suspendido', 'empleado'),
+(10, 'MOZO', '1234', 'candy bar', 'Activo', 'empleado'),
+(11, 'CHEF', '1234', 'cocina', 'Activo', 'empleado');
 
 -- --------------------------------------------------------
 
@@ -333,7 +334,8 @@ INSERT INTO `sesiones` (`id`, `idEmpleado`, `horaInicio`, `horaFinal`) VALUES
 (105, 1, '2018/09/16 0:40,21', ''),
 (106, 1, '2018/09/16 0:41,16', ''),
 (107, 1, '2018/09/16 5:48,03', ''),
-(108, 1, '2018/09/16 5:49,49', '');
+(108, 1, '2018/09/16 5:49,49', ''),
+(109, 1, '2018/11/07 19:06,15', '');
 
 -- --------------------------------------------------------
 
@@ -417,44 +419,37 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `facturas`
 --
 ALTER TABLE `facturas`
   MODIFY `numero` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT de la tabla `mesas`
 --
 ALTER TABLE `mesas`
   MODIFY `idMesa` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- AUTO_INCREMENT de la tabla `pedidodetalle`
 --
 ALTER TABLE `pedidodetalle`
   MODIFY `idDetalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
-
 --
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
   MODIFY `id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
 --
 -- AUTO_INCREMENT de la tabla `sesiones`
 --
 ALTER TABLE `sesiones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
