@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
     loading = false;
     submitted = false;
     returnUrl: string;
+    datacallback: string;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -44,7 +45,8 @@ export class LoginComponent implements OnInit {
             return;
         }
 
-        
+        alert(this.datacallback);
+
         //this.loading = true;
         
         let usuario = 'admin';

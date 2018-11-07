@@ -17,10 +17,10 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class GenericoService {
 
 
-  api="http://localhost/Programacion-3-2017/TP_ESTACIONAMIENTO_DV/";
+  api="http://localhost/";
   
   
-  constructor() { }
+  constructor(public http:Http) { }
   /*constructor(public http:Http) { }
   public httpGetPromise(url: string, objeto:any){
 
@@ -31,6 +31,7 @@ export class GenericoService {
     .then(this.extraerDatos)
     .catch(this.handleError);
   }
+  */
 
   public httpPost(metodo:string, objeto:any)
   {
@@ -48,7 +49,7 @@ export class GenericoService {
 
       return error;
   }
-  */
+  
 
 
 
