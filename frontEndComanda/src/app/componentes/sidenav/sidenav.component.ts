@@ -14,7 +14,7 @@ export interface Section {
 })
 export class SidenavComponent implements OnInit {
 
-   usuario: string;
+   usuario: any;
    folders: Section [];
    notes: Section [];
    muestraSide:boolean = false;
@@ -22,10 +22,11 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit() {
   
-    //this.usuario = localStorage.getItem('usuario');
-    this.usuario = 'admin';
+    this.usuario = JSON.parse(localStorage.getItem('usuario'));
     
-    this.ItemsSideNav(this.usuario);
+    console.log(this.usuario.datos.perfil);
+
+    this.ItemsSideNav(this.usuario.datos.perfil);
 
   }
 

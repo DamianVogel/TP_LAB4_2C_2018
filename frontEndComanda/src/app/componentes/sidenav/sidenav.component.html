@@ -9,7 +9,7 @@
     <!-- USUARIO -->
     <mat-toolbar class="sidenav-toolbar">
       <mat-toolbar-row>
-        <span>Bienvenido {{usuario}}</span>
+        <span>Bienvenido {{usuario.datos.usuario}}</span>
         <mat-icon class="usuario-icon" md-24>face</mat-icon>
       </mat-toolbar-row>      
     
@@ -21,7 +21,7 @@
     </mat-toolbar>
 
 
-    <div [ngSwitch]="usuario">
+    <div [ngSwitch]="usuario.datos.perfil">
       <!-- ADMINISTRADOR -->
       <mat-list   *ngSwitchCase="'admin'">
         
@@ -128,7 +128,7 @@
   <!--CUERPO-->
   
   <mat-drawer-content class="sidenav-content">   
-    <div [ngSwitch]="usuario">
+    <div [ngSwitch]="usuario.datos.perfil">
       
       <div *ngSwitchCase="'admin'">
           <app-admin [muestra]="muestraSide"></app-admin>

@@ -43,30 +43,23 @@ export class LoginComponent implements OnInit {
     onSubmit() {
         this.submitted = true;
         this.loading = true;
+        
         // stop here if form is invalid
         if (this.loginForm.invalid) {
             return;
         }
-
-        //alert(this.datacallback);
-
-        //this.loading = true;
-        
+       
         let datosLogin = new Usuario(this.f.username.value, this.f.password.value);
 
         this._login.ServiceLogin(datosLogin).subscribe( data =>{
-            alert(data._body);
+            
+            localStorage.setItem('usuario',data._body);
+            this.router.navigate(['/Side']); 
+           
+
+
 
         })
-
-
-        // if(usuario == this.f.username.value && password == this.f.password.value)
-        // {
-        //     this.router.navigate(['/Side']); 
-        //     localStorage.setItem('usuario',usuario);
-        // }
-
-
 
         /*
         this.authenticationService.login(this.f.username.value, this.f.password.value)
