@@ -93,6 +93,7 @@ export class SidenavComponent implements OnInit {
     
     this.muestraSide=true;
 
+    //let array = new Array({'uno':variable},)
 
   }
 

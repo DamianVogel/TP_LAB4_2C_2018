@@ -26,6 +26,7 @@ import { CsvComponent } from './componentes/csv/csv.component';
 import { GenericoService } from './servicios/generico.service';
 import { LoginService } from './servicios/login.service';
 import { HttpModule } from '@angular/http';
+import { RecaptchaModule } from 'ng-recaptcha'
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { HttpModule } from '@angular/http';
     NgxCaptchaModule,
     ChartModule,
     Angular2CsvModule,
-    HttpModule
+    HttpModule,
+    RecaptchaModule
   
   
   ],

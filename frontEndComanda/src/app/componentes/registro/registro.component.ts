@@ -84,6 +84,9 @@ export class RegistroComponent implements OnInit {
     console.log(this.registroForm.get('email').value); 
   }
 
+  resolved(captchaResponse: string) {
+    console.log(`Resolved captcha with response ${captchaResponse}:`);
+  }
   
   
  
