@@ -23,6 +23,9 @@ import { ChartModule } from 'angular-highcharts';
 import { Angular2CsvModule } from 'angular2-csv';
 import { AdminComponent } from './componentes/admin/admin.component';
 import { CsvComponent } from './componentes/csv/csv.component';
+import { GenericoService } from './servicios/generico.service';
+import { LoginService } from './servicios/login.service';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -54,11 +57,16 @@ import { CsvComponent } from './componentes/csv/csv.component';
     ]),
     NgxCaptchaModule,
     ChartModule,
-    Angular2CsvModule
+    Angular2CsvModule,
+    HttpModule
   
   
   ],
-  providers: [],
+  providers: [
+    GenericoService,
+    LoginService
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
