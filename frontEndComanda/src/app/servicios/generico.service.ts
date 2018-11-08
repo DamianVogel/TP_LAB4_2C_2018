@@ -17,7 +17,7 @@ export class GenericoService {
 
 
   api="http://localhost/";
-  
+  //api="https://dvlacomanda.000webhostapp.com/backEndComanda/"
   
   constructor(public http:Http) { }
   
