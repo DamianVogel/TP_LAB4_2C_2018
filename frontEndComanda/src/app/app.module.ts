@@ -26,7 +26,8 @@ import { CsvComponent } from './componentes/csv/csv.component';
 import { GenericoService } from './servicios/generico.service';
 import { LoginService } from './servicios/login.service';
 import { HttpModule } from '@angular/http';
-import { RecaptchaModule } from 'ng-recaptcha'
+import { RecaptchaModule } from 'ng-recaptcha';
+import { MapComponent } from './componentes/map/map.component'
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { RecaptchaModule } from 'ng-recaptcha'
     MozoComponent,
     ReporteHighchartComponent,
     AdminComponent,
-    CsvComponent
+    CsvComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
