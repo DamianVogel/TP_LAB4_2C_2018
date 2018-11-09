@@ -30,6 +30,7 @@ export class RegistroComponent implements OnInit {
   email:FormControl;
   clave:FormControl;
   copiaClave: FormControl;
+  captcha: FormControl;
   registroForm: FormGroup;
   captchaResponseTs: string;
   
@@ -61,7 +62,10 @@ export class RegistroComponent implements OnInit {
       copiaClave
     ]);
   
-   
+    this.captcha = new FormControl('', [
+      Validators.required
+     
+    ]);
   
     this.registroForm = this.builder.group({
       email: this.email,

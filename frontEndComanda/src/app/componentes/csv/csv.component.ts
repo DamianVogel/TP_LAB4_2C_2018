@@ -13,7 +13,7 @@ export class CsvComponent implements OnInit {
   }
 
   options = {
-    fieldSeparator: ',',
+    fieldSeparator: ';',
     quoteStrings: '"',
     decimalseparator: '.',
     showLabels: false,
