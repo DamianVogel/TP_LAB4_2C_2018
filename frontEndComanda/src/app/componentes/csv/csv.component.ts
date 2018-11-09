@@ -17,34 +17,36 @@ export class CsvComponent implements OnInit {
     quoteStrings: '"',
     decimalseparator: '.',
     showLabels: false,
-    headers: [],
+    headers: ['dia','pedidos','average'],
     showTitle: true,
-    title: 'asfasf',
+    title: 'Pedidos',
     useBom: false,
     removeNewLines: true,
-    keys: ['approved','age','name' ]
+    keys: ['dia','pedidos','average' ]
   };
   data = [
     {
-      name: "Test, 1",
-      age: 13,
+      dia: 1,
+      //name: "Pedidos",
+      pedidos: 13,
       average: 8.2,
       approved: true,
-      description: "using 'Content here, content here' "
+      //description: "using 'Content here, content here' "
     },
     {
-      name: 'Test 2',
-      age: 11,
+      dia: 2,
+      //name: 'Test 2',
+      pedidos: 11,
       average: 8.2,
       approved: true,
-      description: "using 'Content here, content here' "
+      //description: "using 'Content here, content here' "
     },
     {
-      name: 'Test 3',
-      age: 10,
+      dia: 3,
+      pedidos: 10,
       average: 8.2,
       approved: true,
-      description: "using 'Content here, content here' "
+      //description: "using 'Content here, content here' "
     }
   ];
 

@@ -31,6 +31,8 @@ export class RegistroComponent implements OnInit {
   clave:FormControl;
   copiaClave: FormControl;
   registroForm: FormGroup;
+  captchaResponseTs: string;
+  
 
   constructor(private builder: FormBuilder,
               private _registro: RegistroService
@@ -85,7 +87,9 @@ export class RegistroComponent implements OnInit {
   }
 
   resolved(captchaResponse: string) {
-    console.log(`Resolved captcha with response ${captchaResponse}:`);
+    //console.log(`Resolved captcha with response ${captchaResponse}:`);
+    this.captchaResponseTs = `${captchaResponse}`;
+    console.log(this.captchaResponseTs);
   }
   
   

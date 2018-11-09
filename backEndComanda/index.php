@@ -40,16 +40,17 @@ $app->add(function ($req, $res, $next) {
 $app->group('/Empleados', function () { 
   $this->post('/', \EmpleadoApi::class . ':CargarUno');
   $this->delete('/', \EmpleadoApi::class . ':BorrarUno');
-  $this->post('/ModificarEmpleado', \EmpleadoApi::class . ':ModificarUno');
   $this->put('/Suspender', \EmpleadoApi::class . ':Suspender');  
-  $this->get('/Operaciones/{id}', \EmpleadoApi::class . ':CantidadDeOperaciones');
   $this->get('/Logueos', \EmpleadoApi::class . ':IngresosAlSistema');
+  $this->post('/ModificarEmpleado', \EmpleadoApi::class . ':ModificarUno');
+  $this->get('/Operaciones/{id}', \EmpleadoApi::class . ':CantidadDeOperaciones');
   $this->get('/OperacionesEmpleados', \EmpleadoApi::class . ':OperacionesTodosEmpleados');
   $this->get('/OperacionesSector/{sector}', \EmpleadoApi::class . ':OperacionesPorSector');
   $this->get('/OperacionesEmpleado/{idEmpleado}', \EmpleadoApi::class . ':OperacionesEmpleadoSeparado');
   $this->get('/OperacionesEmpleadoSector/{sector}', \EmpleadoApi::class . ':OperacionesEmpleadosSector');
-  $this->post('/ListaEmpleados', \EmpleadoApi::class . ':traerTodos')->add(\MWLaComanda::class . ':VerificarAdministrador');//->add(\MWparaAutentificar::class . ':VerificarUsuario');
   $this->get('/TraerUno/{id}', \EmpleadoApi::class . ':traerUno')->add(\MWparaCORS::class . ':HabilitarCORSTodos');
+  $this->post('/ListaEmpleados', \EmpleadoApi::class . ':traerTodos')->add(\MWLaComanda::class . ':VerificarAdministrador');//->add(\MWparaAutentificar::class . ':VerificarUsuario');
+  
 })->add(\MWparaAutentificar::class . ':VerificarUsuario')->add(\MWparaCORS::class . ':HabilitarCORS8080')->add(\MWparaCORS::class . ':HabilitarCORSTodos');
 
 

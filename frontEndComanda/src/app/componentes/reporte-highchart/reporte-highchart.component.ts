@@ -25,7 +25,7 @@ export class ReporteHighchartComponent implements OnInit {
 
   addSerie() {
     this.chart.addSerie({
-      name: 'Line ' + Math.floor(Math.random() * 10),
+      name: 'Bebidas ' + Math.floor(Math.random() * 10),
       data: [
         Math.floor(Math.random() * 10),
         Math.floor(Math.random() * 10),
@@ -51,16 +51,16 @@ export class ReporteHighchartComponent implements OnInit {
   init() {
     let chart = new Chart({
       chart: {
-        type: 'line'
+        type: 'bar'
       },
       title: {
-        text: 'Linechart'
+        text: 'Pedidos'
       },
       credits: {
         enabled: false
       },
       series: [{
-        name: 'Line 1',
+        name: 'Dias',
         data: [1, 2, 3]
       }]
     });
