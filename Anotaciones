@@ -1,9 +1,20 @@
 PENDIENTES:
 
 -> SERVICIO MAP
+    -> location_on ICON
 -> CAPTCHA PROPIO
 -> DIRECTIVAS
 -> PIPES
 -> ALTA DE USUARIO
+-> ALTA DE EMPLEADO 
+    -> group_add
 -> ALTA DE PLATO
+    -> local_dining ICON
+    -> restaurant
+
 -> LISTA
+-> AGREGAR IMAGEN A ADMIN
+    -> insert_photo
+-> LOGOUT
+    -> exit_to_app ICON
+-> JWT
