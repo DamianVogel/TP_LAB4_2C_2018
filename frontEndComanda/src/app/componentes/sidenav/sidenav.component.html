@@ -24,7 +24,7 @@
         <!-- <mat-icon class="usuario-icon">face</mat-icon> -->
         <!-- <span class="usuario-spacer">logout</span> -->
         <mat-icon class="usuario-icon">exit_to_app</mat-icon>  
-        <mat-icon class="usuario-icon">insert_photo</mat-icon>
+        <mat-icon (click)="openDialog()"  class="usuario-icon">insert_photo</mat-icon>
       </mat-toolbar-row>
     </mat-toolbar>
 
@@ -139,7 +139,7 @@
     <div [ngSwitch]="usuario.datos.perfil">
       
       <div *ngSwitchCase="'admin'">
-          <app-admin [muestra]="muestraSide"></app-admin>
+          <app-admin [muestra]="muestraSide">Cargando....</app-admin>
       </div>
       
       <div *ngSwitchCase="'mozo'">

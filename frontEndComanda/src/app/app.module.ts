@@ -27,7 +27,15 @@ import { GenericoService } from './servicios/generico.service';
 import { LoginService } from './servicios/login.service';
 import { HttpModule } from '@angular/http';
 import { RecaptchaModule } from 'ng-recaptcha';
-import { MapComponent } from './componentes/map/map.component'
+import { MapComponent } from './componentes/map/map.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { CambiarImagenComponent } from './componentes/cambiar-imagen/cambiar-imagen.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material';
+import {AccordionModule} from 'primeng/accordion';     //accordion and accordion tab
+import {MenuItem} from 'primeng/api';
+import {FileUploadModule} from 'primeng/fileupload';
+import { SubirArchivoComponent } from './componentes/subir-archivo/subir-archivo.component';
 
 
 @NgModule({
@@ -40,7 +48,9 @@ import { MapComponent } from './componentes/map/map.component'
     ReporteHighchartComponent,
     AdminComponent,
     CsvComponent,
-    MapComponent
+    MapComponent,
+    CambiarImagenComponent,
+    SubirArchivoComponent
   ],
   imports: [
     BrowserModule,
@@ -62,15 +72,22 @@ import { MapComponent } from './componentes/map/map.component'
     ChartModule,
     Angular2CsvModule,
     HttpModule,
-    RecaptchaModule
-  
-  
+    RecaptchaModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    AccordionModule,
+    FileUploadModule
+
   ],
   providers: [
     GenericoService,
     LoginService
 
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    CambiarImagenComponent
+]
 })
 export class AppModule { }

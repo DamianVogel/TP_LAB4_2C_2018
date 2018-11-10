@@ -1,0 +1,20 @@
+<div>
+  <p-fileUpload 
+              styleClass="div"
+              name="myfile[]" 
+              url="./upload.php"
+              mode="advanced"
+              name="avatar" 
+              accept="image/*" 
+              maxFileSize="1000000"
+              chooseLabel="Seleccionar imagen"
+              invalidFileSizeMessageSummary = "Imagen demasiado grande"
+              invalidFileSizeMessageDetail = "No debe ser mayor a 1 MB"
+              invalidFileTypeMessageSummary = "Tipo de archivo incorrecto"
+              invalidFileTypeMessageDetail = "Unicamente puede subir imagenes"        
+              showUploadButton=""
+              showCancelButton=""
+              (onSelect)="ArchivoSeleccionado($event)"
+              previewWidth="200"
+  ></p-fileUpload>
+</div>

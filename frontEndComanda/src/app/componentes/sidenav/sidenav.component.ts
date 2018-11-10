@@ -1,9 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, Inject } from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { CambiarImagenComponent } from '../cambiar-imagen/cambiar-imagen.component';
 
 export interface Section {
   name: string;
   updated: Date;
+}
+
+export interface DialogData {
+  animal: string;
+  name: string;
 }
 
 
@@ -18,9 +24,13 @@ export class SidenavComponent implements OnInit {
   folders: Section [];
   notes: Section [];
   muestraSide:boolean = false;
-  imagen:string;
+  imagen:any;
 
-  constructor() { }
+  
+  animal: string;
+
+
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
     this.imagen = './assets/imagenes/admin.png';
@@ -98,6 +108,46 @@ export class SidenavComponent implements OnInit {
 
   }
 
+  openDialog(): void {
+    const dialogRef = this.dialog.open(CambiarImagenComponent, {
+      width: '250px',
+      data: { animal: this.animal}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      //this.imagen = result;
+      
+      //aca va el id del usuario.
+      //y  tiene que ir la ruta de la imagen.
+      
+      console.log(this.imagen);
+    });
+  }
+
+  
+
+
 
 
 }
+
+/*
+@Component({
+  selector: 'dialog-overview-example-dialog',
+  templateUrl: 'dialog-overview-example-dialog.html',
+})
+
+
+export class DialogOverviewExampleDialog {
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+}
+*/
