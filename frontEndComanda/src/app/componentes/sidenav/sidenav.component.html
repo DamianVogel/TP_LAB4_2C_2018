@@ -3,22 +3,28 @@
   
   <!-- SIDE -->
   
-  <mat-drawer mode="side" opened>
+  <mat-drawer class="mat-drawer-avatar" mode="side" opened>
 
     
     <!-- USUARIO -->
     <mat-toolbar class="sidenav-toolbar">
       <mat-toolbar-row>
-        <span>Bienvenido {{usuario.datos.usuario}}</span>
+        <span class="span-avatar">Bienvenido {{usuario.datos.usuario}}</span>
       </mat-toolbar-row>      
     
+
+
+      <mat-toolbar-row>
+        <img class="enmarcada" [src]="imagen" alt="Avatar">
+      </mat-toolbar-row>
+
       <mat-toolbar-row>
         <!-- <span>Third Line</span>-->
         <!-- <span class="usuario-spacer"></span>  -->
         <!-- <mat-icon class="usuario-icon">face</mat-icon> -->
-        <span class="usuario-spacer">logout</span>
+        <!-- <span class="usuario-spacer">logout</span> -->
         <mat-icon class="usuario-icon">cancel</mat-icon>  
-        
+        <mat-icon class="usuario-icon">insert_photo</mat-icon>
       </mat-toolbar-row>
     </mat-toolbar>
 

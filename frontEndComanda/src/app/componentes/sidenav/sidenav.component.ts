@@ -14,14 +14,17 @@ export interface Section {
 })
 export class SidenavComponent implements OnInit {
 
-   usuario: any;
-   folders: Section [];
-   notes: Section [];
-   muestraSide:boolean = false;
+  usuario: any;
+  folders: Section [];
+  notes: Section [];
+  muestraSide:boolean = false;
+  imagen:string;
+
   constructor() { }
 
   ngOnInit() {
-  
+    this.imagen = './assets/imagenes/admin.png';
+
     this.usuario = JSON.parse(localStorage.getItem('usuario'));
     
     console.log(this.usuario.datos.perfil);

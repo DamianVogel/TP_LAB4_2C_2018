@@ -15,6 +15,15 @@
   /* font-family: Roboto, Arial, sans-serif; */
   font-family: 'Oswald', sans-serif;
   background-image: url(../../../assets/imagenes/loginfondo.jpg);
+
+  /*
+  position: relative;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  */
+
 }
 
 .sidenav-toolbar{
@@ -66,11 +75,26 @@
   color: rgba(27, 26, 26, 0.54);
   
 }
+mat-icon{
+  margin: 5px;
+
+}
 
 .usuario-icon {
   padding: 0 14px;
   cursor: pointer;
   font-size: 30px; 
+}
+
+.span-avatar{
+  /*padding: 10% 10%;*/
+  float: left;
+  margin: 20px;
+}
+
+span{
+  margin: 20px;
+
 }
 
 .usuario-spacer {
@@ -79,15 +103,35 @@
 
 .mat-list-button button,
 .mat-list-button a {
-  margin-right: 8px;
+  margin: 8px;
   display: flex;
 
 }
 
-mat-drawer{
-width:  auto;
+.mat-drawer-avatar{
+  /*
+  position: fixed;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  */
+}
 
+mat-toolbar-row{
+  padding:10px;
+  margin:10px; /* distancia entre el borde y el contenido */
+}
 
+.enmarcada{
+  position: relative;
+  /*border:1px solid #000; /* ancho - tipo - color */
+  /*padding:10px; /* distancia entre la img y el borde */
+  margin:10px; /* distancia entre el borde y el contenido */
+  width:120px; /* el ancho de la img */
+  border-radius:150px;
+  border:5px solid #666;
+  height: 120px; 
 }
 
 
