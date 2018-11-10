@@ -22,9 +22,14 @@ PENDIENTES:
 -> LISTA
 -> AGREGAR IMAGEN A ADMIN
     -> insert_photo
+
+
 -> LOGOUT
     -> exit_to_app ICON
+
 -> JWT
+
+-> SPINNER
 
 
 COSAS PARA HACER:
