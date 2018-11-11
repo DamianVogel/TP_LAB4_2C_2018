@@ -4,9 +4,10 @@ class Empleado
 	public $id;
 	public $usuario;
   	public $clave;
-	  public $sector;
-	  public $perfil;
-	  public $estado;
+	public $sector;
+	public $perfil;
+	public $estado;
+	public $avatar;
 
 
   	public function BorrarEmpleado()
@@ -211,16 +212,38 @@ class Empleado
 
 	 }
 
-public static function CantidadDeOperacionesEmp($id)
-{
-			$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
-			$consulta =$objetoAccesoDato->RetornarConsulta("SELECT * FROM operaciones WHERE idEmpleado=:id");
-			$consulta->bindValue(':id', $id, PDO::PARAM_INT);
-			 $consulta->execute();
-			 return $consulta->rowCount();
+	public static function CantidadDeOperacionesEmp($id)
+	{
+				$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+				$consulta =$objetoAccesoDato->RetornarConsulta("SELECT * FROM operaciones WHERE idEmpleado=:id");
+				$consulta->bindValue(':id', $id, PDO::PARAM_INT);
+				$consulta->execute();
+				return $consulta->rowCount();
 
-      			
-}
+					
+	}
+
+	public static function CambiarAvatar($id, $avatar)
+	{
+		
+	
+		
+
+		$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
+		$consulta =$objetoAccesoDato->RetornarConsulta("UPDATE empleados SET avatar=:avatar WHERE id=:id");
+		
+		$consulta->bindValue(':id',$id, PDO::PARAM_INT);
+		$consulta->bindValue(':avatar',$avatar, PDO::PARAM_LOB);
+
+		$resultado = $consulta->execute();
+		
+		return $resultado;
+
+		
+		
+	}
+	
+
 
 
 

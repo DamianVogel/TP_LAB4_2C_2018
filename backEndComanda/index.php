@@ -42,6 +42,7 @@ $app->group('/Empleados', function () {
   $this->delete('/', \EmpleadoApi::class . ':BorrarUno');
   $this->put('/Suspender', \EmpleadoApi::class . ':Suspender');  
   $this->get('/Logueos', \EmpleadoApi::class . ':IngresosAlSistema');
+  $this->post('/CambiarAvatar', \EmpleadoApi::class . ':CambiarAvatarApi');
   $this->post('/ModificarEmpleado', \EmpleadoApi::class . ':ModificarUno');
   $this->get('/Operaciones/{id}', \EmpleadoApi::class . ':CantidadDeOperaciones');
   $this->get('/OperacionesEmpleados', \EmpleadoApi::class . ':OperacionesTodosEmpleados');

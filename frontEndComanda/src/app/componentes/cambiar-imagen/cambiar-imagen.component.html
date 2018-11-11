@@ -1,36 +1,14 @@
-<!-- <h1 mat-dialog-title>Admin.. {{data.name}}</h1> -->
-<div class="fuente" mat-dialog-content>
-  <p> Cambiar el Avatar?</p>
-  <!-- <mat-form-field> -->
-    <!-- <input      matInput [(ngModel)]="data.animal">  -->
+<div class="div-cambiarImagen-principal">
+    <div class="div-cambiar-Imagen-appSubirArchivo" mat-dialog-content>
+        <p> Cambiar el Avatar?</p>
+            
+            <app-subir-archivo></app-subir-archivo>
     
-    <!-- <p-fileUpload name="myfile[]" url="./upload.php" multiple="multiple"
-        accept="image/*" maxFileSize="1000000">
-        <ng-template pTemplate="toolbar">
-            <div>Upload 3 Files</div>
-        </ng-template>
-        <ng-template let-file pTemplate="file">
-            <div>Custom UI to display a file</div>
-        </ng-template>
-        <ng-template pTemplate="content">
-            <div>Custom UI to manage uploaded files</div>
-        </ng-template>
-    </p-fileUpload> -->
-  
-    <app-subir-archivo></app-subir-archivo>
-  
-  
-  
-  
-  
-  
-  
-  <!-- </mat-form-field> -->
-</div>
-<div class="fuente" mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Cancelar</button>
-  <span></span>
-  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
-</div>
+    </div>
+    <div class="fuente" mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">Cancelar</button>
+        <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+    </div>
+</div>  
 
 

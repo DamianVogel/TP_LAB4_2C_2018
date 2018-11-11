@@ -1,33 +1,8 @@
-/* @import '~@angular/material/prebuilt-themes/deeppurple-amber.css'; */
- 
-.div{
-  max-width: 500%;
-
+div p-fileUpload img ul li{
+    width: fit-content;
 
 }
+ui-fileupload-row ng-star-inserted{
+    width: auto;
 
-/* .fuente{ 
-    font-family: 'Oswald', sans-serif;
-    cursor: pointer;
-    
-  } */
-  
-/* ui-fileupload{
-  font-family: 'Oswald', sans-serif;
-
-}	
-   */
-  
-  /*
-  .basic-container {
-    padding: 30px;
-  }
-  
-  .version-info {
-    font-size: 8pt;
-    float: right;
-  } */
-  /* p-fileUpload{
-    max-width: fit-content;
-
-  } */
+}
