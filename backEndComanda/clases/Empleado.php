@@ -174,7 +174,7 @@ class Empleado
 
 	public static function ValidarEmpleado($usuario, $clave) 
 	{
-		
+		try{
 			$objetoAccesoDato = AccesoDatos::dameUnObjetoAcceso(); 
 			$consulta =$objetoAccesoDato->RetornarConsulta("SELECT  * from empleados WHERE usuario=:usuario and clave=:clave");
 			$consulta->bindValue(':usuario', $usuario, PDO::PARAM_STR);
@@ -182,8 +182,15 @@ class Empleado
 			$consulta->execute();
 			$empleadobuscado= $consulta->fetchObject('Empleado');			
 
-				return $empleadobuscado;
-			  
+			return $empleadobuscado;
+		}  
+		catch (Exception $e)
+                        {
+                                $rta = "Error al ejecutar la sentencia (detalle del error:".$e->getMessage();
+								return $rta;
+						}
+		
+	
 	}
 
 

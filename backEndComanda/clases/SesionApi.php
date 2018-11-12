@@ -22,7 +22,14 @@ try
     $sesion->idEmpleado=$empleado->id;
     $sesion->horaInicio= date('Y/m/d G:i,s');
     $idSesion=$sesion->IniciarSesion();
-    $datos = array('usuario' => $empleado->usuario,'perfil' => $empleado->perfil, 'idEmpleado' => $empleado->id, 'sector' => $empleado->sector, 'estado' => $empleado->estado, 'idSesion' => $idSesion);
+    $datos = array( 'usuario' => $empleado->usuario,
+                    'perfil' => $empleado->perfil,
+                    'idEmpleado' => $empleado->id,
+                    'sector' => $empleado->sector,
+                    'estado' => $empleado->estado, 
+                    'idSesion' => $idSesion,
+                    'avatar'=> $empleado->avatar);
+
     $token= AutentificadorJWT::CrearToken($datos);
     $respuesta= array('token'=>$token,'datos'=> $datos);
 
