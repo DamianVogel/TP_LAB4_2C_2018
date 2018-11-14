@@ -24,6 +24,8 @@ export class SidenavComponent implements OnInit {
   folders: Section [];
   notes: Section [];
   muestraSide:boolean = false;
+  muestraMapa:boolean = false;
+
   imagen:any;
 
   
@@ -105,8 +107,16 @@ export class SidenavComponent implements OnInit {
   Emiter(){
     
     this.muestraSide=true;
-
+    this.muestraMapa=false;
   }
+
+  MuestraMapa()
+  {
+    this.muestraSide=false;
+    this.muestraMapa=true;
+  
+  }
+
 
   openDialog(): void {
     const dialogRef = this.dialog.open(CambiarImagenComponent, {

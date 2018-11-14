@@ -11,6 +11,7 @@ export class SubirArchivoComponent implements OnInit {
 
   url:any;
 
+  uploadedFiles: any[] = [];
   archivo:any;
 
   constructor() { }
@@ -18,40 +19,25 @@ export class SubirArchivoComponent implements OnInit {
   ngOnInit() {
   }
 
-  ArchivoSeleccionado(archivoUpload){
-    
-    // const reader = new FileReader();
-     
-    // /*
-    // this.archivo = archivoUpload.files;
-    // console.log(this.archivo);
-    // */
-
-    // // if(archivoUpload.target.files && archivoUpload.target.files.length) {
-    // // const [file] = archivoUpload.target.files;
-    // // reader.readAsDataURL(file);
+  onUpload(event) {
+    for(let file of event.files) {
+        this.uploadedFiles.push(file);
+    }
   
-    // //   this.url = reader.result;
-    // // }
+    console.log(this.uploadedFiles);
 
-
-    // reader.onloadend = function (event) {
-      
-
-    //    if(archivoUpload.target.files && archivoUpload.target.files.length) {
-    //     const [file] = archivoUpload.target.files;
-    //     reader.readAsDataURL(file)
-      
-    //     //this.url = reader.result;
-    //   }
-    
-    // }
-
-    // reader.onload = (event) => { // called once readAsDataURL is completed
-    //   this.url = event.target.result;
-    // }
-
-    
   
   }
+
+  onSelect(event) {
+    for(let file of event.files) {
+        this.uploadedFiles.push(file);
+    }
+  
+    console.log(this.uploadedFiles);
+
+  
+  }
+
+
 }

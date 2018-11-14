@@ -7,7 +7,7 @@ import {FileUploadModule} from 'primeng/fileupload';
 export interface DialogData {
   
   animal: string;
- 
+  imagen: any;
 }
 
 
