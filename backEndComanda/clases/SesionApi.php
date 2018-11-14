@@ -27,8 +27,9 @@ try
                     'idEmpleado' => $empleado->id,
                     'sector' => $empleado->sector,
                     'estado' => $empleado->estado, 
-                    'idSesion' => $idSesion,
-                    'avatar'=> $empleado->avatar);
+                    'idSesion' => $idSesion
+                    //,'avatar'=> $empleado->avatar
+                    );
 
     $token= AutentificadorJWT::CrearToken($datos);
     $respuesta= array('token'=>$token,'datos'=> $datos);

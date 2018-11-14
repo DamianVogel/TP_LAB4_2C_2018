@@ -36,7 +36,7 @@ import {AccordionModule} from 'primeng/accordion';     //accordion and accordion
 import {MenuItem} from 'primeng/api';
 import {FileUploadModule} from 'primeng/fileupload';
 import { SubirArchivoComponent } from './componentes/subir-archivo/subir-archivo.component';
-
+import { VerificarJWTService } from './servicios/verificar-jwt.service';
 
 @NgModule({
   declarations: [
@@ -65,7 +65,7 @@ import { SubirArchivoComponent } from './componentes/subir-archivo/subir-archivo
       {path: '' , component: LoginComponent}
       ,{path: 'Login' , component: LoginComponent}
       ,{path: 'Registro' , component: RegistroComponent}
-      ,{path: 'Side' , component: SidenavComponent}
+      ,{path: 'Side' , component: SidenavComponent, canActivate: [VerificarJWTService]}
       ,{path: 'Reporte' , component: ReporteHighchartComponent}
     ]),
     NgxCaptchaModule,

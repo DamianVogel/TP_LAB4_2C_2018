@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { GuardarAvatarService } from '../../servicios/guardar-avatar.service';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class SubirArchivoComponent implements OnInit {
   uploadedFiles: any[] = [];
   archivo:any;
 
-  constructor() { }
+  constructor(private _guardarAvatar: GuardarAvatarService) { }
 
   ngOnInit() {
   }
@@ -36,7 +36,12 @@ export class SubirArchivoComponent implements OnInit {
   
     console.log(this.uploadedFiles);
 
-  
+    this._guardarAvatar.GuardarAvatarService(this.uploadedFiles).subscribe(
+      data =>{           
+        console.log(data._body);       
+      });
+    
+    
   }
 
 

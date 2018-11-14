@@ -7,7 +7,7 @@ class Empleado
 	public $sector;
 	public $perfil;
 	public $estado;
-	public $avatar;
+	//public $avatar;
 
 
   	public function BorrarEmpleado()

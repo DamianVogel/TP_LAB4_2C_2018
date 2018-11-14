@@ -124,8 +124,8 @@ class EmpleadoApi extends Empleado implements IApiUsable
                         'perfil' => $empleado->perfil, 
                         'id'=>$empleado->id, 
                         'sector'=>$empleado->sector, 
-                        'estado'=>$empleado->estado,
-                        'avatar'=>$empleado->avatar                  
+                        'estado'=>$empleado->estado
+                       // ,'avatar'=>$empleado->avatar                  
                     );
 
 
