@@ -1,7 +1,5 @@
 <div>
   <p-fileUpload 
-              name="myfile[]" 
-              disabled=""
               mode="advanced"
               name="avatar" 
               accept="image/*" 
@@ -13,16 +11,18 @@
               invalidFileTypeMessageDetail = "Unicamente puede subir imagenes"        
               showUploadButton="true"
               showCancelButton=""
-              
               previewWidth="200"
+              (onUpload)="onUpload($event)"
               (onSelect)="onSelect($event)"
-  >
-    <!-- <ng-template pTemplate="content">
+              >  
+  </p-fileUpload>
+</div>
+
+<!-- <ng-template pTemplate="content">
       <ul *ngIf="uploadedFiles.length">
           <li *ngFor="let file of uploadedFiles">{{file.name}} - {{file.size}} bytes</li>
       </ul>
     </ng-template> 
     (onSelect)="ArchivoSeleccionado($event)"
+     
   -->
-  </p-fileUpload>
-</div>

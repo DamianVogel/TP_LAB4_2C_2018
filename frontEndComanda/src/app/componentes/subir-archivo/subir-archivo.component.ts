@@ -25,18 +25,32 @@ export class SubirArchivoComponent implements OnInit {
     }
   
     console.log(this.uploadedFiles);
+    /*
+    this._guardarAvatar.GuardarAvatarService(this.uploadedFiles).subscribe(
+      data =>{           
+        console.log(data._body);       
+      });
+    */
 
   
   }
 
   onSelect(event) {
-    for(let file of event.files) {
-        this.uploadedFiles.push(file);
-    }
+     for(let file of event.files) {
+         this.uploadedFiles.push(file);
+     }
   
-    console.log(this.uploadedFiles);
+  //  let file: File = fileList[0];
+        let formData:FormData = new FormData();
+        formData.append('avatar', this.uploadedFiles[0].data, this.uploadedFiles[0].name);
+        
 
-    this._guardarAvatar.GuardarAvatarService(this.uploadedFiles).subscribe(
+
+
+
+    //console.log(this.uploadedFiles);
+
+    this._guardarAvatar.GuardarAvatarService(formData).subscribe(
       data =>{           
         console.log(data._body);       
       });

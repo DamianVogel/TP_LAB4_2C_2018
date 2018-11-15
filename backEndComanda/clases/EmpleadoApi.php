@@ -214,18 +214,18 @@ class EmpleadoApi extends Empleado implements IApiUsable
 	{
 			
         try{
-            $ArrayDeParametros = $request->getParsedBody();
-               
-        
-                $id=$ArrayDeParametros['id'];       
-        
+            $ArrayDeParametros = $request->getParsedBody();                       
+            $id=$ArrayDeParametros['id'];       
+            $archivo = new stdClass();
+            $archivo = $ArrayDeParametros['avatar'];
         
         
        // $avatarNombre = file_get_contents($_FILES['avatar']['name']); 
-        $avatarData= file_get_contents($_FILES['avatar']['tmp_name']);
+        //$avatarData= file_get_contents($ArrayDeParametros['avatar']['tmp_name']);
+            $avatarData= file_get_contents($archivo);
         //$avatarTipo = file_get_contents($_FILES['avatar']['type']);
 
-        $avatarData = utf8_encode($avatarData);
+            $avatarData = utf8_encode($avatarData);
 
         //$avatarData = mb_convert_encoding($avatarData, 'UTF-8', 'UTF-8');
 

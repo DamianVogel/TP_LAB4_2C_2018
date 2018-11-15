@@ -10,9 +10,14 @@ export class GuardarAvatarService {
   constructor(public _generico: GenericoService) { }
 
   public GuardarAvatarService(avatar):Observable<any> {
-    //console.log("entro LoginService" + datosLogin);
+
+    let datos = JSON.parse(localStorage.getItem('usuario'));
     
-    return this._generico.httpPost("Empleados/CambiarAvatar",avatar)
+    avatar.append(datos.token);
+    //let array = new Object();
+    //array= {'token':datos.token,'avatar':avatar[0]};
+   
+    return this._generico.httpPostHeader("Empleados/CambiarAvatar",avatar)
         .pipe(data =>{return data;}); 
 
   }

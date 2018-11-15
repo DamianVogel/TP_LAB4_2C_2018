@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import {Http ,Response} from '@angular/http';
+import {Http ,Response, Headers } from '@angular/http';
 //import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs';
 //import 'rxjs/add/operator/map';
 //import 'rxjs/add/operator/catch';
 import { catchError, map, tap } from 'rxjs/operators';
+import { HttpHeaders} from '@angular/common/http';
 
 
 
@@ -30,11 +31,29 @@ export class GenericoService {
   }
 
 
+  public httpPostHeader(metodo:string, objeto:any):Observable<any>
+  { 
+   
+    
+    
+
+    var headers = new Headers();
+    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+
+
+    return this.http.post(this.api + metodo, objeto,{ headers: headers })
+    .pipe(catchError(this.handleError));
+  }
+
+
   public httpPost(metodo:string, objeto:any):Observable<any>
   { 
     return this.http.post(this.api + metodo, objeto)
     .pipe(catchError(this.handleError));
   }
+
+
+
 
 
   private extraerDatos(resp:Response) {
