@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-11-2018 a las 19:11:39
--- Versión del servidor: 10.1.22-MariaDB
--- Versión de PHP: 7.1.4
+-- Tiempo de generación: 15-11-2018 a las 11:44:22
+-- Versión del servidor: 10.1.32-MariaDB
+-- Versión de PHP: 7.2.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -34,18 +34,20 @@ CREATE TABLE `empleados` (
   `clave` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `sector` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `estado` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
-  `perfil` varchar(50) COLLATE utf8_spanish2_ci NOT NULL
+  `perfil` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
+  `avatar` blob
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `empleados`
 --
 
-INSERT INTO `empleados` (`id`, `usuario`, `clave`, `sector`, `estado`, `perfil`) VALUES
-(1, 'ADMIN', '1234', 'Dueño', 'Activo', 'admin'),
-(9, 'BARMAN', '1234', 'barra', 'suspendido', 'empleado'),
-(10, 'MOZO', '1234', 'candy bar', 'Activo', 'empleado'),
-(11, 'CHEF', '1234', 'cocina', 'Activo', 'empleado');
+INSERT INTO `empleados` (`id`, `usuario`, `clave`, `sector`, `estado`, `perfil`, `avatar`) VALUES
+(1, 'ADMIN', '1234', 'Dueño', 'Activo', 'admin', NULL),
+(9, 'BARMAN', '1234', 'barra', 'suspendido', 'empleado', NULL),
+(10, 'MOZO', '1234', 'candy bar', 'Activo', 'empleado', NULL),
+(11, 'CHEF', '1234', 'cocina', 'Activo', 'empleado', NULL),
+(12, 'CHEF', '1234', 'cocina', 'Activo', 'empleado', NULL);
 
 -- --------------------------------------------------------
 
@@ -335,7 +337,73 @@ INSERT INTO `sesiones` (`id`, `idEmpleado`, `horaInicio`, `horaFinal`) VALUES
 (106, 1, '2018/09/16 0:41,16', ''),
 (107, 1, '2018/09/16 5:48,03', ''),
 (108, 1, '2018/09/16 5:49,49', ''),
-(109, 1, '2018/11/07 19:06,15', '');
+(109, 1, '2018/11/07 19:06,15', ''),
+(110, 1, '2018/11/08 0:09,35', ''),
+(111, 1, '2018/11/08 1:03,05', ''),
+(112, 1, '2018/11/08 1:09,36', ''),
+(113, 1, '2018/11/08 1:13,52', ''),
+(114, 1, '2018/11/08 1:22,01', ''),
+(115, 1, '2018/11/10 3:18,48', ''),
+(116, 1, '2018/11/10 16:38,35', ''),
+(117, 1, '2018/11/10 17:54,13', ''),
+(118, 1, '2018/11/10 17:59,03', ''),
+(119, 1, '2018/11/10 18:11,36', ''),
+(120, 1, '2018/11/10 18:19,15', ''),
+(121, 1, '2018/11/10 18:27,04', ''),
+(122, 1, '2018/11/10 19:22,33', ''),
+(123, 1, '2018/11/10 19:26,26', ''),
+(124, 1, '2018/11/10 19:33,57', ''),
+(125, 1, '2018/11/10 20:58,31', ''),
+(126, 1, '2018/11/11 0:43,55', ''),
+(127, 1, '2018/11/11 2:35,45', ''),
+(128, 1, '2018/11/11 2:45,03', ''),
+(129, 1, '2018/11/11 2:49,14', ''),
+(130, 1, '2018/11/11 2:54,14', ''),
+(131, 1, '2018/11/11 15:25,37', ''),
+(132, 1, '2018/11/11 16:55,20', ''),
+(133, 1, '2018/11/11 16:58,00', ''),
+(134, 1, '2018/11/11 17:01,00', ''),
+(135, 1, '2018/11/11 17:02,45', ''),
+(136, 1, '2018/11/11 17:50,17', ''),
+(137, 1, '2018/11/11 17:54,34', ''),
+(138, 1, '2018/11/11 17:55,19', ''),
+(139, 1, '2018/11/11 18:09,01', ''),
+(140, 1, '2018/11/11 18:12,56', ''),
+(141, 1, '2018/11/11 18:21,20', ''),
+(142, 1, '2018/11/11 18:22,58', ''),
+(143, 1, '2018/11/11 18:25,02', ''),
+(144, 1, '2018/11/14 23:41,47', ''),
+(145, 1, '2018/11/14 23:43,45', ''),
+(146, 1, '2018/11/14 23:46,22', ''),
+(147, 1, '2018/11/14 23:47,29', ''),
+(148, 1, '2018/11/14 23:49,22', ''),
+(149, 1, '2018/11/14 23:49,23', ''),
+(150, 1, '2018/11/14 23:50,42', ''),
+(151, 1, '2018/11/14 23:50,48', ''),
+(152, 1, '2018/11/14 23:53,04', ''),
+(153, 1, '2018/11/14 23:53,08', ''),
+(154, 1, '2018/11/14 23:54,16', ''),
+(155, 1, '2018/11/14 23:54,35', ''),
+(156, 1, '2018/11/15 0:10,49', ''),
+(157, 1, '2018/11/15 0:19,35', ''),
+(158, 1, '2018/11/15 0:21,52', ''),
+(159, 1, '2018/11/15 0:22,45', ''),
+(160, 1, '2018/11/15 0:26,07', ''),
+(161, 1, '2018/11/15 0:28,06', ''),
+(162, 1, '2018/11/15 0:28,53', ''),
+(163, 1, '2018/11/15 0:29,54', ''),
+(164, 1, '2018/11/15 0:30,33', ''),
+(165, 1, '2018/11/15 0:31,17', ''),
+(166, 1, '2018/11/15 0:33,06', ''),
+(167, 1, '2018/11/15 0:35,44', ''),
+(168, 1, '2018/11/15 0:36,14', ''),
+(169, 1, '2018/11/15 0:38,03', ''),
+(170, 1, '2018/11/15 1:24,14', ''),
+(171, 1, '2018/11/15 1:28,09', ''),
+(172, 1, '2018/11/15 2:41,26', ''),
+(173, 1, '2018/11/15 2:44,15', ''),
+(174, 1, '2018/11/15 2:57,56', ''),
+(175, 1, '2018/11/15 3:59,46', '');
 
 -- --------------------------------------------------------
 
@@ -419,37 +487,44 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
 -- AUTO_INCREMENT de la tabla `facturas`
 --
 ALTER TABLE `facturas`
   MODIFY `numero` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
 -- AUTO_INCREMENT de la tabla `mesas`
 --
 ALTER TABLE `mesas`
   MODIFY `idMesa` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT de la tabla `pedidodetalle`
 --
 ALTER TABLE `pedidodetalle`
   MODIFY `idDetalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
 --
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
   MODIFY `id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
 --
 -- AUTO_INCREMENT de la tabla `sesiones`
 --
 ALTER TABLE `sesiones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=176;
+
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
