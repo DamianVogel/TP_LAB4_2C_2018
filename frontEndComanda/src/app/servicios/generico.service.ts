@@ -17,8 +17,8 @@ import { HttpHeaders} from '@angular/common/http';
 export class GenericoService {
 
 
-  api="http://localhost/";
-  //api="https://dvlacomanda.000webhostapp.com/backEndComanda/"
+  //api="http://localhost/";
+  api="https://dvlacomanda.000webhostapp.com/backEndComanda/"
   
   constructor(public http:Http) { }
   
@@ -35,13 +35,17 @@ export class GenericoService {
   { 
    
     
+    console.log(objeto);
     
-
     var headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
-
-
-    return this.http.post(this.api + metodo, objeto,{ headers: headers })
+    //headers.append('avatar',objeto);
+    
+    return this.http.post(
+                          this.api + metodo
+                          ,objeto
+                          ,{ headers: headers }
+                          )
     .pipe(catchError(this.handleError));
   }
 

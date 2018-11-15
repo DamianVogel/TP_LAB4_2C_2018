@@ -39,7 +39,7 @@ export class SidenavComponent implements OnInit {
 
     this.usuario = JSON.parse(localStorage.getItem('usuario'));
     
-    console.log(this.usuario.datos.perfil);
+    //console.log(this.usuario.datos.perfil);
 
     this.ItemsSideNav(this.usuario.datos.perfil);
 

@@ -13,12 +13,23 @@ export class GuardarAvatarService {
 
     let datos = JSON.parse(localStorage.getItem('usuario'));
     
-    avatar.append(datos.token);
-    //let array = new Object();
-    //array= {'token':datos.token,'avatar':avatar[0]};
+    let id = datos.datos.idEmpleado;
+    let token = datos.token; 
+
+    
+
+    let datosEnvia = new Object();
+    datosEnvia =  {  
+                    'id':id, 
+                    'avatar':avatar, 
+                    'token': token
+                  };
+
+    console.log(datosEnvia);
+    
    
-    return this._generico.httpPostHeader("Empleados/CambiarAvatar",avatar)
-        .pipe(data =>{return data;}); 
+    return this._generico.httpPostHeader("Empleados/CambiarAvatar",datosEnvia) 
+    .pipe(data =>{return data;}); 
 
   }
 
