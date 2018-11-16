@@ -25,7 +25,11 @@ export class SubirArchivoComponent implements OnInit {
         this.uploadedFiles.push(file);
     }
     
-    this._guardarAvatar.GuardarAvatarService(this.uploadedFiles[0]).subscribe();
+    this._guardarAvatar.GuardarAvatarService(this.uploadedFiles[0]).subscribe(
+      data => {
+        console.log(data._body);
+      }
+    );
     
   }
 
