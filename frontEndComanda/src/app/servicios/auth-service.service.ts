@@ -29,7 +29,7 @@ export class AuthService {
       this.datosUsuario = JSON.parse(localStorage.getItem('usuario'));
 
       this._token = this.datosUsuario.token;
-      console.log(this._token);
+      //console.log(this._token);
 
       if(this.jwtHelper.isTokenExpired(this._token))
       {

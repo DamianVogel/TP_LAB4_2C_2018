@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GuardarAvatarService } from '../../servicios/guardar-avatar.service';
+import {FileUploadModule} from 'primeng/fileupload';
 
 
 @Component({
@@ -19,44 +20,17 @@ export class SubirArchivoComponent implements OnInit {
   ngOnInit() {
   }
 
-  onUpload(event) {
+  Evento(event) {
     for(let file of event.files) {
         this.uploadedFiles.push(file);
     }
-  
-    console.log(this.uploadedFiles);
-    /*
-    this._guardarAvatar.GuardarAvatarService(this.uploadedFiles).subscribe(
-      data =>{           
-        console.log(data._body);       
-      });
-    */
-
-  
-  }
-
-  onSelect(event) {
-     for(let file of event.files) {
-         this.uploadedFiles.push(file);
-     }
-  
-  //  let file: File = fileList[0];
-        let formData:FormData = new FormData();
-        formData.append('avatar', this.uploadedFiles[0].data, this.uploadedFiles[0].name);
-        
-
-
-
-
-    //console.log(this.uploadedFiles);
-
-    this._guardarAvatar.GuardarAvatarService(formData).subscribe(
-      data =>{           
-        console.log(data._body);       
-      });
     
+    this._guardarAvatar.GuardarAvatarService(this.uploadedFiles[0]).subscribe(
+      data => {
+        console.log(data._body);
+      }
+    );
     
   }
-
 
 }

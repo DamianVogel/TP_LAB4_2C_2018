@@ -86,6 +86,7 @@ class MWparaAutentificar
 		  
 		 //$response->getBody()->write('<p>vuelvo del verificador de credenciales</p>');
 		 return $response;   
+		 //return $ArrayDeParametros;
 	}
 
 }

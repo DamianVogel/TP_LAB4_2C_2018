@@ -2,6 +2,7 @@
   <p-fileUpload 
               mode="advanced"
               name="avatar" 
+              
               accept="image/*" 
               maxFileSize="1000000"
               chooseLabel="Seleccionar imagen"
@@ -9,11 +10,10 @@
               invalidFileSizeMessageDetail = "No debe ser mayor a 1 MB"
               invalidFileTypeMessageSummary = "Tipo de archivo incorrecto"
               invalidFileTypeMessageDetail = "Unicamente puede subir imagenes"        
-              showUploadButton="true"
+              showUploadButton=""
               showCancelButton=""
               previewWidth="200"
-              (onUpload)="onUpload($event)"
-              (onSelect)="onSelect($event)"
+              (onSelect)="Evento($event)"
               >  
   </p-fileUpload>
 </div>
@@ -24,5 +24,6 @@
       </ul>
     </ng-template> 
     (onSelect)="ArchivoSeleccionado($event)"
-     
+     (onUpload)="onUpload($event)"
+              (onSelect)="onSelect($event)"
   -->
