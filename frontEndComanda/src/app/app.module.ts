@@ -37,6 +37,9 @@ import {MenuItem} from 'primeng/api';
 import {FileUploadModule} from 'primeng/fileupload';
 import { SubirArchivoComponent } from './componentes/subir-archivo/subir-archivo.component';
 import { VerificarJWTService } from './servicios/verificar-jwt.service';
+import { FiltroPipe } from './pipes/filtro.pipe';
+import { EstadoPedidoDirective } from './directivas/estado-pedido.directive';
+import { TipoProductoDirective } from './directivas/tipo-producto.directive';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,10 @@ import { VerificarJWTService } from './servicios/verificar-jwt.service';
     CsvComponent,
     MapComponent,
     CambiarImagenComponent,
-    SubirArchivoComponent
+    SubirArchivoComponent,
+    FiltroPipe,
+    EstadoPedidoDirective,
+    TipoProductoDirective
   ],
   imports: [
     BrowserModule,
