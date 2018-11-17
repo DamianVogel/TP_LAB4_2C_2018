@@ -1,4 +1,4 @@
-<div class=" container">
+<div class=" container container-mozo">
   <div class="row">
     <div class="tabla-prod col-sm-4">
       <form class="form-group" action="">
@@ -19,11 +19,12 @@
           <th>Precio</th>
           <th>Accion</th>
         </thead>
-        <tbody *ngIf="listaProductos">
+        <tbody >
           <tr *ngFor="let producto of (listaProductos | filtro: busqueda)">
+          
             <td  estilo [tipo]="producto.responsable">{{producto.nombre}}</td>
             
-              <!-- <td><app-boton-agregar [producto]="producto" (enviar)="AgregarAlPedido($event)"></app-boton-agregar></td> -->
+          <td><app-boton-agregar [producto]="producto" (enviar)="AgregarAlPedido($event)"></app-boton-agregar></td> 
           </tr>
         </tbody>
       </table>
@@ -42,7 +43,7 @@
           <th>Precio</th>
           <th>Accion</th>
         </thead>
-        <!-- <tbody *ngIf="productosPedido">
+        <tbody *ngIf="productosPedido">
           <tr *ngFor="let producto of productosPedido">
 
             <td>{{producto.nombre}}</td>
@@ -51,7 +52,7 @@
               <app-boton-borrar [objeto]="producto" (enviarABorrar)="QuitarAlPedido($event)"></app-boton-borrar>
             </td>
           </tr>
-        </tbody> -->
+        </tbody>
         <tfoot>
           <td>Total</td>
           <td>{{totalPedido | currency: '$ ': true: '1.1-2'}} </td>
@@ -63,7 +64,7 @@
       <button class="btn btn-success col-sm-12" (click)="IngresarPedido()">Ingresar pedido</button>
       <div class="card-pedido card col-sm-12">
 
-        <!-- <legend>Numero pedido:</legend>
+        <legend>Numero pedido:</legend>
         <h3 *ngIf="elPedido.id"> {{elPedido.id}} </h3>
         <legend>Detalle:</legend>
         <ul *ngFor="let p of elPedido.detalle">
@@ -71,21 +72,10 @@
         </ul>
         <legend>Total:</legend>
         <h4 *ngIf="elPedido.id"> {{totalPedido | currency: '$ ': true: '1.1-2'}} </h4>
-        <div>
+        <!-- <div>
           <app-csv *ngIf="elPedido.id" [pedido]="elPedido"></app-csv>
-        </div>
- -->
-
+        </div> -->
       </div>
-
-
-
-
-
-
-
     </div>
   </div>
-
-
 </div>

@@ -40,6 +40,8 @@ import { VerificarJWTService } from './servicios/verificar-jwt.service';
 import { FiltroPipe } from './pipes/filtro.pipe';
 import { EstadoPedidoDirective } from './directivas/estado-pedido.directive';
 import { TipoProductoDirective } from './directivas/tipo-producto.directive';
+import { BotonAgregarComponent } from './componentes/boton-agregar/boton-agregar.component';
+import { BotonBorrarComponent } from './componentes/boton-borrar/boton-borrar.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { TipoProductoDirective } from './directivas/tipo-producto.directive';
     SubirArchivoComponent,
     FiltroPipe,
     EstadoPedidoDirective,
-    TipoProductoDirective
+    TipoProductoDirective,
+    BotonAgregarComponent,
+    BotonBorrarComponent
   ],
   imports: [
     BrowserModule,

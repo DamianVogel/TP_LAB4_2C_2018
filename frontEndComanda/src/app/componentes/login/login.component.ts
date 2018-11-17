@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
         this._login.ServiceLogin(datosLogin).subscribe( data =>{
             
             localStorage.setItem('usuario',data._body);
-            //console.log(data._body);
+            console.log(data._body);
             //localStorage.setItem('token', data._body.token);
             
             this.router.navigate(['/Side']); 
