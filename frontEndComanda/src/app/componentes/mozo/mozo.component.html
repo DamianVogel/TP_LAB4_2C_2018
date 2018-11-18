@@ -1,81 +1,110 @@
-<div class=" container container-mozo">
-  <div class="row">
-    <div class="tabla-prod col-sm-4">
-      <form class="form-group" action="">
-        <br>
-        <label for="numeroMesa">Numero de mesa</label>
-        <input class="form-control miInput" id="numeroMesa" placeholder="mesa" type="text" name="mesa" value="0002"
-          [(ngModel)]="mesa">
-
-        <label for="fotoMesa">Foto mesa</label>
-
-        <p-fileUpload id="fotoMesa" mode="advanced" name="mesa" url="http://localhost:8080/TP_PROG3_1C_2018/backend/Mesas/FotoMesa"></p-fileUpload>
-      </form>
-      <input type="text" placeholder="Busqueda" class="form-control miInput" [(ngModel)]="busqueda">
-      <br>
-      <table class="table table-hover ">
-        <thead>
-          <th>Producto</th>
-          <th>Precio</th>
-          <th>Accion</th>
-        </thead>
-        <tbody >
-          <tr *ngFor="let producto of (listaProductos | filtro: busqueda)">
-          
-            <td  estilo [tipo]="producto.responsable">{{producto.nombre}}</td>
+<div class="container-fluid" style="
+padding-top: 70%;
+border-top-width: 70%;
+margin-top: 70%;
+" >
+  <mat-tab-group>
+    <mat-tab label="First"> 
+      <div class="tabla-prod">       
+        <input type="text" placeholder="Busqueda" class="form-control miInput" [(ngModel)]="busqueda">
+       
+        <table class="table table-hover ">
+          <thead>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Accion</th>
+          </thead>
+          <tbody >
+            <tr *ngFor="let producto of (listaProductos | filtro: busqueda)">
             
-          <td><app-boton-agregar [producto]="producto" (enviar)="AgregarAlPedido($event)"></app-boton-agregar></td> 
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-
-
-
-
-    <div class="tabla-prod col-sm-4">
-      <h2>Pedido</h2>
-      <table class="table">
-
-        <thead>
-          <th>Producto</th>
-          <th>Precio</th>
-          <th>Accion</th>
-        </thead>
-        <tbody *ngIf="productosPedido">
-          <tr *ngFor="let producto of productosPedido">
-
-            <td>{{producto.nombre}}</td>
-            <td>{{producto.precio | currency: '$ ': true: '1.1-2'}}</td>
-            <td>
-              <app-boton-borrar [objeto]="producto" (enviarABorrar)="QuitarAlPedido($event)"></app-boton-borrar>
-            </td>
-          </tr>
-        </tbody>
-        <tfoot>
-          <td>Total</td>
-          <td>{{totalPedido | currency: '$ ': true: '1.1-2'}} </td>
-        </tfoot>
-      </table>
-    </div>
-
-    <div class="btn-ingresar col-sm-4 ">
-      <button class="btn btn-success col-sm-12" (click)="IngresarPedido()">Ingresar pedido</button>
-      <div class="card-pedido card col-sm-12">
-
-        <legend>Numero pedido:</legend>
-        <h3 *ngIf="elPedido.id"> {{elPedido.id}} </h3>
-        <legend>Detalle:</legend>
-        <ul *ngFor="let p of elPedido.detalle">
-          <li>{{p.nombre}}</li>
-        </ul>
-        <legend>Total:</legend>
-        <h4 *ngIf="elPedido.id"> {{totalPedido | currency: '$ ': true: '1.1-2'}} </h4>
-        <!-- <div>
-          <app-csv *ngIf="elPedido.id" [pedido]="elPedido"></app-csv>
-        </div> -->
+              <td  estilo [tipo]="producto.responsable">{{producto.nombre}}</td>
+              
+            <td><app-boton-agregar [producto]="producto" (enviar)="AgregarAlPedido($event)"></app-boton-agregar></td> 
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
-  </div>
+      <form class="form-group" action="">
+          
+          <label for="numeroMesa">Numero de mesa</label>
+          <input class="form-control miInput" id="numeroMesa" placeholder="mesa" type="text" name="mesa" value="0002"
+            [(ngModel)]="mesa">
+
+          <label for="fotoMesa">Foto mesa</label>
+
+          <p-fileUpload id="fotoMesa" mode="advanced" name="mesa" url="http://localhost:8080/TP_PROG3_1C_2018/backend/Mesas/FotoMesa"></p-fileUpload>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </mat-tab>
+    
+
+    <mat-tab label="Second"> 
+      <div class="tabla-prod">
+        <h2>Pedido</h2>
+        <table class="table">
+
+          <thead>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Accion</th>
+          </thead>
+          <tbody *ngIf="productosPedido">
+            <tr *ngFor="let producto of productosPedido">
+
+              <td>{{producto.nombre}}</td>
+              <td>{{producto.precio | currency: '$ ': true: '1.1-2'}}</td>
+              <td>
+                <app-boton-borrar [objeto]="producto" (enviarABorrar)="QuitarAlPedido($event)"></app-boton-borrar>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <td>Total</td>
+            <td>{{totalPedido | currency: '$ ': true: '1.1-2'}} </td>
+          </tfoot>
+        </table>
+      </div>
+    </mat-tab>
+    
+    <mat-tab label="Third">  
+      <div class="btn-ingresar col-sm-4 ">
+        <button class="btn btn-success col-sm-12" (click)="IngresarPedido()">Ingresar pedido</button>
+        <div class="card-pedido card col-sm-12">
+
+          <legend>Numero pedido:</legend>
+          <h3 *ngIf="elPedido.id"> {{elPedido.id}} </h3>
+          <legend>Detalle:</legend>
+          <ul *ngFor="let p of elPedido.detalle">
+            <li>{{p.nombre}}</li>
+          </ul>
+          <legend>Total:</legend>
+          <h4 *ngIf="elPedido.id"> {{totalPedido | currency: '$ ': true: '1.1-2'}} </h4>
+          <!-- <div>
+            <app-csv *ngIf="elPedido.id" [pedido]="elPedido"></app-csv>
+          </div> -->
+        </div>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
 </div>
+
+
+
+
+
+
+
+

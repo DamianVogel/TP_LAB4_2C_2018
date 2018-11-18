@@ -49,6 +49,7 @@ import { BotonServirComponent } from './componentes/boton-servir/boton-servir.co
 import { CheffComponent } from './componentes/cheff/cheff.component';
 import { BarTenderComponent } from './componentes/bar-tender/bar-tender.component';
 import { CandyManComponent } from './componentes/candy-man/candy-man.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -101,7 +102,8 @@ import { CandyManComponent } from './componentes/candy-man/candy-man.component';
     MatFormFieldModule,
     MatInputModule,
     AccordionModule,
-    FileUploadModule
+    FileUploadModule,
+    MatTabsModule
 
   ],
   providers: [
