@@ -9,7 +9,7 @@
     <!-- USUARIO -->
     <mat-toolbar class="sidenav-toolbar">
       <mat-toolbar-row>
-        <span class="span-avatar">Bienvenido {{usuario.datos.usuario}}</span>
+        <span class="span-avatar">Bienvenido {{usuario.usuario}}</span>
       </mat-toolbar-row>      
     
 
@@ -30,7 +30,7 @@
     </mat-toolbar>
 
 
-    <div [ngSwitch]="usuario.datos.perfil">
+    <div [ngSwitch]="usuario.perfil">
       <!-- ADMINISTRADOR -->
       <mat-list   *ngSwitchCase="'admin'">
         
@@ -103,8 +103,8 @@
 
 
 
-       <!-- BARMAN -->
-       <mat-list  *ngSwitchCase="'barman'">
+       <!-- Chopera -->
+       <mat-list  *ngSwitchCase="'chopera'">
           <h3 mat-subheader>Pedidos Pendientes</h3>
           <mat-list-item *ngFor="let folder of folders">
             <mat-icon mat-list-icon>assignment</mat-icon>
@@ -122,11 +122,17 @@
     </div>
 
   </mat-drawer>
+ 
   
+
+
+
+
+
   <!--CUERPO-->
   
   <mat-drawer-content class="sidenav-content">   
-    <div [ngSwitch]="usuario.datos.perfil">
+    <div [ngSwitch]="usuario.perfil">
       
       <div *ngSwitchCase="'admin'">
           <app-admin [muestra]="muestraSide"
@@ -138,7 +144,11 @@
       
       <div *ngSwitchCase="'mozo'">
           <app-mozo></app-mozo>
-      </div>      
+      </div>  
+      
+      <div *ngSwitchCase="'chopera'">
+        <app-birra></app-birra>
+    </div>
     
     </div>  
   </mat-drawer-content>

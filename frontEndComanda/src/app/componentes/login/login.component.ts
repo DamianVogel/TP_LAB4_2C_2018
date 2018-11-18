@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
     submitted = false;
     returnUrl: string;
     datacallback: string;
+    respuesta: any;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -53,12 +54,35 @@ export class LoginComponent implements OnInit {
 
         this._login.ServiceLogin(datosLogin).subscribe( data =>{
             
-            localStorage.setItem('usuario',data._body);
-            console.log(data._body);
-            //localStorage.setItem('token', data._body.token);
+            this.respuesta = JSON.parse(data._body);
             
-            this.router.navigate(['/Side']); 
+            if (this.respuesta)
+            {
+              localStorage.setItem('data', JSON.stringify(this.respuesta) );
+              localStorage.setItem('usuario', JSON.stringify(this.respuesta.datos) );
+              
+              localStorage.setItem('token', JSON.stringify(this.respuesta.token) );
+              this.router.navigate(['/Side']); 
+             
+            }
+            else{
+              alert("error");
+              this.router.navigate(['/Login']); 
+            }
+
+
+            // localStorage.setItem('usuario',data._body);
+            // localStorage.setItem('token',data._body.token )
+            
+            
+            // console.log(data._body);
+            // localStorage.setItem('token', data._body.token);
+            
+            // this.router.navigate(['/Side']); 
            
+            
+
+       
 
 
 

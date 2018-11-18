@@ -42,6 +42,10 @@ import { EstadoPedidoDirective } from './directivas/estado-pedido.directive';
 import { TipoProductoDirective } from './directivas/tipo-producto.directive';
 import { BotonAgregarComponent } from './componentes/boton-agregar/boton-agregar.component';
 import { BotonBorrarComponent } from './componentes/boton-borrar/boton-borrar.component';
+import { BirraComponent } from './componentes/birra/birra.component';
+import { PendientesComponent } from './componentes/pendientes/pendientes.component';
+import { BotonPrepararComponent } from './componentes/boton-preparar/boton-preparar.component';
+import { BotonServirComponent } from './componentes/boton-servir/boton-servir.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +64,11 @@ import { BotonBorrarComponent } from './componentes/boton-borrar/boton-borrar.co
     EstadoPedidoDirective,
     TipoProductoDirective,
     BotonAgregarComponent,
-    BotonBorrarComponent
+    BotonBorrarComponent,
+    BirraComponent,
+    PendientesComponent,
+    BotonPrepararComponent,
+    BotonServirComponent
   ],
   imports: [
     BrowserModule,

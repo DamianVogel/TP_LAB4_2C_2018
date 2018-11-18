@@ -46,7 +46,7 @@ export class SidenavComponent implements OnInit {
     
     //console.log(this.usuario.datos.perfil);
 
-    this.ItemsSideNav(this.usuario.datos.perfil);
+    this.ItemsSideNav(this.usuario.perfil);
 
   }
 

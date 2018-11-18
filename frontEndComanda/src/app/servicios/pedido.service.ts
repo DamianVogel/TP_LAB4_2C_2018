@@ -22,7 +22,10 @@ export class PedidoService {
   TraerPedidosPorSector()
   {
     
-    return this.http.httpPost("Pedidos/PendientesEmpleado",{"token":localStorage.getItem('token')})
+    let usuario = JSON.parse(localStorage.getItem('token'));
+    console.log(usuario);
+
+    return this.http.httpPost("Pedidos/PendientesEmpleado",{"token":usuario})
     .pipe(data =>{return data;});
   }
 

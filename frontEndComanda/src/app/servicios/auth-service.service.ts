@@ -26,9 +26,9 @@ export class AuthService {
   {
     try {
       
-      this.datosUsuario = JSON.parse(localStorage.getItem('usuario'));
-
-      this._token = this.datosUsuario.token;
+     // this.datosUsuario = JSON.parse(localStorage.getItem('usuario'));
+      this._token = JSON.parse(localStorage.getItem('token'));
+      //this._token = this.datosUsuario.token;
       //console.log(this._token);
 
       if(this.jwtHelper.isTokenExpired(this._token))
@@ -56,10 +56,10 @@ export class AuthService {
   {
     try {
       
-      this.datosUsuario = JSON.parse(localStorage.getItem('usuario'));
+      // this.datosUsuario = JSON.parse(localStorage.getItem('usuario'));
 
-      this._token = this.datosUsuario.token;
-      
+      // this._token = this.datosUsuario.token;
+      this._token = JSON.parse(localStorage.getItem('token'));
       console.log('getToken', this.jwtHelper.decodeToken(this._token));
       return this.jwtHelper.decodeToken(this._token);
     } catch (error) {
@@ -71,10 +71,11 @@ export class AuthService {
   {
     try {
       
-     this.datosUsuario = JSON.parse(localStorage.getItem('usuario'));
+     //this.datosUsuario = JSON.parse(localStorage.getItem('usuario'));
 
-     this._token = this.datosUsuario.token;
+     //this._token = this.datosUsuario.token;
 
+     this._token = JSON.parse(localStorage.getItem('token'));
 
       let decodetoken = this.jwtHelper.decodeToken(this._token);
       
@@ -100,7 +101,7 @@ export class AuthService {
   public logOut()
   {
     try {
-      localStorage.setItem('usuario', null);
+      localStorage.setItem('token', null);
       this.router.navigate(['/login']);
     } catch (error) {
       return false;
