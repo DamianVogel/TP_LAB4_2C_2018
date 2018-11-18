@@ -32,6 +32,7 @@ export class PedidoService {
   IngresarPedido(pedido: Pedido)
   {
     
+    console.log(pedido);
 
     return this.http.httpPost("Pedidos/",pedido)
     .pipe(data =>{return data;});
@@ -39,10 +40,15 @@ export class PedidoService {
 
   PrepararPedido(idDetalle, tPrepacion)
   {
+    
+    let token = JSON.parse(localStorage.getItem('token'));
+    console.log(token);
+    
+    
     let datos={
       "idDetalle": idDetalle,
       "tiempoPreparacion": tPrepacion,
-      "token": localStorage.getItem('token')
+      "token": token
     }
 
     return this.http.httpPost("Pedidos/PrepararPedido",datos)
