@@ -78,6 +78,53 @@ export class LoginComponent implements OnInit {
         */
       }
 
+    TestAdmin(){
+        this.loginForm = this.formBuilder.group({
+            username: ['Admin', Validators.required],
+            password: ['admin', Validators.required]
+        });
+    }
+
+   
+    TestMozo(){
+        this.loginForm = this.formBuilder.group({
+            username: ['Mozo', Validators.required],
+            password: ['1234', Validators.required]
+        });
+    }
+
+    TestBirra(){
+        this.loginForm = this.formBuilder.group({
+            username: ['BirraMan', Validators.required],
+            password: ['1234', Validators.required]
+        });
+    }
+    
+    TestChef(){
+        this.loginForm = this.formBuilder.group({
+            username: ['Cheff', Validators.required],
+            password: ['1234', Validators.required]
+        });
+    }
+
+    TestBarTender(){
+        this.loginForm = this.formBuilder.group({
+            username: ['BarTender', Validators.required],
+            password: ['1234', Validators.required]
+        });
+    }
+
+
+
+    TestCandyBar(){
+        this.loginForm = this.formBuilder.group({
+            username: ['CandyMan', Validators.required],
+            password: ['1234', Validators.required]
+        });
+    }
+
+
+
 
     Registrar(){
         this.router.navigateByUrl("/Registro");

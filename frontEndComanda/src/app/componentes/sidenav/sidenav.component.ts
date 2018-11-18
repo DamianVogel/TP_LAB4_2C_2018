@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { CambiarImagenComponent } from '../cambiar-imagen/cambiar-imagen.component';
+import { Router } from '@angular/router';
 
 export interface Section {
   name: string;
@@ -32,7 +33,11 @@ export class SidenavComponent implements OnInit {
   animal: string;
 
 
-  constructor(public dialog: MatDialog) { }
+  constructor(
+    public dialog: MatDialog,
+    private router: Router
+    //private httpUsuario: UsuariosService
+  ) { }
 
   ngOnInit() {
     this.imagen = './assets/imagenes/admin.png';
@@ -44,6 +49,16 @@ export class SidenavComponent implements OnInit {
     this.ItemsSideNav(this.usuario.datos.perfil);
 
   }
+
+  Salir()
+  {
+    
+      localStorage.clear();
+      this.router.navigate(['Login']);
+    
+  }
+
+
 
   ItemsSideNav(tipo){
   

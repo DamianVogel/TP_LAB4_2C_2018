@@ -1,5 +1,11 @@
 PENDIENTES:
 
+
+-BOTON DE PERFILES
+-IMAGEN DE AVATAR
+
+
+
 -> MANEJO DE IMAGENES 
     -> https://www.npmjs.com/package/angular-material-fileupload
     -> SE PUEDE APLICAR COMO AVATAR.
