@@ -52,7 +52,7 @@
 .sidenav-content {
   display: flex;
   height: 100%;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   font-family: 'Oswald', sans-serif;
 }
