@@ -1,7 +1,6 @@
-<body class="jumbotron text-center">
-<div  >
-  <mat-tab-group>
-    <mat-tab label="First"> 
+<body class="jumbotron">
+<div>
+  
       <div class="tabla-prod">       
         <input type="text" placeholder="Busqueda" class="form-control miInput" [(ngModel)]="busqueda">
        
@@ -15,7 +14,7 @@
             <tr *ngFor="let producto of (listaProductos | filtro: busqueda)">
             
               <td  estilo [tipo]="producto.responsable">{{producto.nombre}}</td>
-              
+              <td>{{producto.precio | currency: '$ ': true: '1.1-2'}}</td>
             <td><app-boton-agregar [producto]="producto" (enviar)="AgregarAlPedido($event)"></app-boton-agregar></td> 
             </tr>
           </tbody>
@@ -31,25 +30,8 @@
 
           <p-fileUpload id="fotoMesa" mode="advanced" name="mesa" url="http://localhost:8080/TP_PROG3_1C_2018/backend/Mesas/FotoMesa"></p-fileUpload>
         </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-
      
-      <div class="tabla-prod">
+      <div class="tabla-prod2">
         <h2>Pedido</h2>
         <table class="table">
 
@@ -74,12 +56,10 @@
           </tfoot>
         </table>
       </div>
-    </mat-tab>
-    
-    <mat-tab label="Third">  
-      <div class="btn-ingresar col-sm-4 ">
-        <button class="btn btn-success col-sm-12" (click)="IngresarPedido()">Ingresar pedido</button>
-        <div class="card-pedido card col-sm-12">
+      
+      <div class="btn-ingresar">
+        <button class="btn btn-success" (click)="IngresarPedido()">Ingresar pedido</button>
+        <div class="card-pedido card">
 
           <legend>Numero pedido:</legend>
           <h3 *ngIf="elPedido.id"> {{elPedido.id}} </h3>
@@ -94,8 +74,8 @@
           </div> -->
         </div>
       </div>
-    </mat-tab>
-  </mat-tab-group>
+    
+  
 </div>
 </body>
 
