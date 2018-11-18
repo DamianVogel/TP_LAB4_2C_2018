@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 
 export interface Section {
   name: string;
-  updated: Date;
+  //updated: Date;
 }
 
 export interface DialogData {
@@ -67,54 +67,136 @@ export class SidenavComponent implements OnInit {
               this.folders = [
                 {
                   name: 'Empleados',
-                  updated: new Date('1/1/16'),
+                  //updated: new Date('1/1/16'),
                 },
                 {
                   name: 'Clientes',
-                  updated: new Date('1/17/16'),
+                  //updated: new Date('1/17/16'),
                 },
                 {
                   name: 'Pedidos',
-                  updated: new Date('1/28/16'),
+                  //updated: new Date('1/28/16'),
                 }
               ];
               this.notes = [
                 {
                   name: 'HighChart',
-                  updated: new Date('2/20/16'),
+                  //updated: new Date('2/20/16'),
                 },
                 {
                   name: 'Excel',
-                  updated: new Date('1/18/16'),
+                  //updated: new Date('1/18/16'),
                 }
               ];  
         break;
         
         case 'mozo':
-              this.folders = [
-                {
-                  name: 'Alta de Pedido',
-                  updated: new Date('1/1/16'),
-                },
-                {
-                  name: 'Pedidos Pendientes',
-                  updated: new Date('1/17/16'),
-                }
-               
-              ];
-              this.notes = [
-                {
-                  name: 'PDF',
-                  updated: new Date('2/20/16'),
-                },
-                {
-                  name: 'Excel',
-                  updated: new Date('1/18/16'),
-                }
-              ];  
+                this.folders = [
+                  {
+                    name: 'Alta de Pedido',
+                    //updated: new Date('1/1/16'),
+                  },
+                  {
+                    name: 'Pedidos Pendientes',
+                    //updated: new Date('1/17/16'),
+                  }
+                
+                ];
+                this.notes = [
+                  {
+                    name: 'PDF',
+                    //updated: new Date('2/20/16'),
+                  },
+                  {
+                    name: 'Excel',
+                    //updated: new Date('1/18/16'),
+                  }
+                ];  
+                break;
+
+        case 'chopera':
+        this.folders = [
+         
+          {
+            name: 'Pedidos Pendientes',
+            //updated: new Date('1/17/16')
+          }
+         
+        ];
+        this.notes = [
+          {
+            name: 'PDF',
+            //updated: new Date('2/20/16'),
+          },
+          {
+            name: 'Excel',
+            //updated: new Date('1/18/16'),
+          }
+        ];  
+        break;
+
+        case 'cocina':
+        this.folders = [
+         
+          {
+            name: 'Pedidos Pendientes',
+            //updated: new Date('1/17/16')
+          }
+         
+        ];
+        this.notes = [
+          {
+            name: 'PDF',
+            //updated: new Date('2/20/16'),
+          },
+          {
+            name: 'Excel',
+            //updated: new Date('1/18/16')
+          }
+        ];  
         break;
         
-      
+        case 'candy':
+        this.folders = [
+         
+          {
+            name: 'Pedidos Pendientes',
+            //updated: new Date('1/17/16'),
+          }
+         
+        ];
+        this.notes = [
+          {
+            name: 'PDF',
+            //updated: new Date('2/20/16'),
+          },
+          {
+            name: 'Excel',
+            //updated: new Date('1/18/16'),
+          }
+        ];  
+        break;
+
+        case 'barra':
+        this.folders = [
+         
+          {
+            name: 'Pedidos Pendientes',
+            //updated: new Date('1/17/16'),
+          }
+         
+        ];
+        this.notes = [
+          {
+            name: 'PDF',
+            //updated: new Date('2/20/16'),
+          },
+          {
+            name: 'Excel',
+            //updated: new Date('1/18/16'),
+          }
+        ];  
+        break;      
       }
     
   }

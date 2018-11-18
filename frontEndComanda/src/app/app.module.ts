@@ -46,6 +46,9 @@ import { BirraComponent } from './componentes/birra/birra.component';
 import { PendientesComponent } from './componentes/pendientes/pendientes.component';
 import { BotonPrepararComponent } from './componentes/boton-preparar/boton-preparar.component';
 import { BotonServirComponent } from './componentes/boton-servir/boton-servir.component';
+import { CheffComponent } from './componentes/cheff/cheff.component';
+import { BarTenderComponent } from './componentes/bar-tender/bar-tender.component';
+import { CandyManComponent } from './componentes/candy-man/candy-man.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +71,10 @@ import { BotonServirComponent } from './componentes/boton-servir/boton-servir.co
     BirraComponent,
     PendientesComponent,
     BotonPrepararComponent,
-    BotonServirComponent
+    BotonServirComponent,
+    CheffComponent,
+    BarTenderComponent,
+    CandyManComponent
   ],
   imports: [
     BrowserModule,
