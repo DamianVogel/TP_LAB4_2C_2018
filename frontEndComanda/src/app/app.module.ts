@@ -55,6 +55,7 @@ import {DialogModule} from 'primeng/dialog';
 import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 import { BotonSuspenderComponent } from './componentes/boton-suspender/boton-suspender.component';
 import { BotonBorrarUsuarioComponent } from './componentes/boton-borrar-usuario/boton-borrar-usuario.component';
+import { CaptchaComponent } from './componentes/captcha/captcha.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { BotonBorrarUsuarioComponent } from './componentes/boton-borrar-usuario/
     MesasComponent,
     UsuariosComponent,
     BotonSuspenderComponent,
-    BotonBorrarUsuarioComponent
+    BotonBorrarUsuarioComponent,
+    CaptchaComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,27 @@
+
+<div >
+  <p>Seleccione: {{pedido}}</p>
+  <div *ngIf="spinner" class="spinner">
+      <img src="./assets/imagenes/spinner.gif" style="height: 150px; width: 150px" alt="">
+    </div> 
+    
+  <div *ngIf="!spinner && !respuesta" >
+    <div>
+      <mat-icon (click)="Ingresar('Arriba')" class="material-icons md-48">thumb_up</mat-icon>
+    </div>
+    <div>  
+      <mat-icon (click)="Ingresar('Abajo')" class="material-icons md-48">thumb_down</mat-icon> 
+    </div>
+    <div>  
+      <mat-icon (click)="Ingresar('Moto')" class="material-icons md-48">motorcycle</mat-icon> 
+    </div>
+    <div>  
+      <mat-icon (click)="Ingresar('Barco')" class="material-icons md-48">directions_boat</mat-icon> 
+    </div>
+  
+  
+  </div>
+
+  <legend *ngIf="respuesta">No soy un robot</legend>
+
+</div>
