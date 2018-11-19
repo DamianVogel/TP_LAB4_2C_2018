@@ -29,6 +29,7 @@ export class SidenavComponent implements OnInit {
   muestraMesas: boolean = false;
   muestraAltaPedido: boolean = false;
   muestraPendientes: boolean = false;
+  muestraUsuarios: boolean = false;
 
   imagen:any;
 
@@ -227,13 +228,25 @@ export class SidenavComponent implements OnInit {
     this.muestraMesas = true;
     this.muestraAltaPedido = false;
     this.muestraPendientes = false;
+    this.muestraUsuarios = false;
   }
 
   MuestraPendientes(){
     this.muestraMesas = false;
     this.muestraAltaPedido = false;
     this.muestraPendientes = true;
+    this.muestraUsuarios = false;
+  
   }
+
+  MuestraUsuarios(){
+    this.muestraMesas = false;
+    this.muestraAltaPedido = false;
+    this.muestraPendientes = false;
+    this.muestraUsuarios = true;
+
+  }
+
 
   openDialog(): void {
     const dialogRef = this.dialog.open(CambiarImagenComponent, {

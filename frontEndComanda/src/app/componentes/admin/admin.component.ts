@@ -15,6 +15,7 @@ export class AdminComponent implements OnInit {
   @Input() muestraMapa: boolean;
   @Input() muestraMesas: boolean;
   @Input() muestraPendientes: boolean;
+  @Input() muestraUsuarios: boolean;
 
   constructor() { }
 

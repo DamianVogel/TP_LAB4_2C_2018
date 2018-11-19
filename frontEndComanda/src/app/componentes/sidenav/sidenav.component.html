@@ -35,7 +35,7 @@
 
           <mat-list-item  class="mat-list">                     
             <mat-icon mat-list-icon md-36>assignment_ind</mat-icon>
-            <button mat-raised-button class="mat-list-button">
+            <button mat-raised-button (click)="MuestraUsuarios()" class="mat-list-button">
               
               <h4 mat-line>Empleados</h4>
               
@@ -206,6 +206,7 @@
                     [muestraMapa]="muestraMapa"
                     [muestraMesas]="muestraMesas"
                     [muestraPendientes]="muestraPendientes"
+                    [muestraUsuarios]="muestraUsuarios"
           
           
           >Cargando....</app-admin>

@@ -52,6 +52,8 @@ import { CandyManComponent } from './componentes/candy-man/candy-man.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MesasComponent } from './componentes/mesas/mesas.component';
 import {DialogModule} from 'primeng/dialog';
+import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
+import { BotonSuspenderComponent } from './componentes/boton-suspender/boton-suspender.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +80,9 @@ import {DialogModule} from 'primeng/dialog';
     CheffComponent,
     BarTenderComponent,
     CandyManComponent,
-    MesasComponent
+    MesasComponent,
+    UsuariosComponent,
+    BotonSuspenderComponent
   ],
   imports: [
     BrowserModule,
