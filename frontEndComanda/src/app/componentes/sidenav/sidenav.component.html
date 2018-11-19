@@ -59,35 +59,11 @@
               
             </button>                     
           </mat-list-item>
-        
-
-        
-        
-        
-        
-        <!-- <mat-divider></mat-divider>
-        
-        <h3 mat-subheader class="h3-subheader">Reportes</h3>
-          
-        
-          
-          <mat-list-item  class="mat-list">
-            <mat-icon mat-list-icon md-36>assessment</mat-icon>
-            <h4 mat-line (click)="Emiter()">HighChart</h4>
-           
-            
-          </mat-list-item>
-
-          <mat-list-item  class="mat-list">
-            <mat-icon mat-list-icon md-36>table_chart</mat-icon>
-            <h4 mat-line (click)="Emiter()">CSV</h4>
-                      
-          </mat-list-item>      -->
       </mat-list>
 
       <!-- MESERO -->
       <mat-list  *ngSwitchCase="'mozo'">
-        <h3 mat-subheader>Pedidos Pendientes</h3>
+        <h3 mat-subheader class="mat-subheader">Pedidos Pendientes</h3>
         <mat-list-item  class="mat-list">                     
           <mat-icon mat-list-icon md-36>playlist_add</mat-icon>
           <button mat-raised-button  (click)="MuestraAltaPedido()" class="mat-list-button">
@@ -104,18 +80,6 @@
             <h4 mat-line>Mesas</h4>
             
           </button>                     
-        </mat-list-item>
-        
-        
-        
-        
-        
-        <mat-divider></mat-divider>
-          <h3 mat-subheader>Reportes</h3>
-          <mat-list-item  class="mat-list" *ngFor="let note of notes">
-            <mat-icon mat-list-icon>note</mat-icon>
-            <h4 mat-line>{{note.name}}</h4>
-          
         </mat-list-item>
       </mat-list>
 
@@ -190,11 +154,6 @@
     </div>
   </mat-drawer>
  
-  
-
-
-
-
 
   <!--CUERPO-->
   

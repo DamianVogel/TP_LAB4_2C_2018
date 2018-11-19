@@ -80,6 +80,10 @@ mat-icon{
 
 }
 
+.mat-subheader{
+  font-family: 'Oswald', sans-serif;
+}
+
 .usuario-icon {
   padding: 0 14px;
   cursor: pointer;

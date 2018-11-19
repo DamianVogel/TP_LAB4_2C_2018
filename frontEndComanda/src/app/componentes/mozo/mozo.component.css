@@ -7,27 +7,33 @@
     
     background-color: rgba(10, 10, 10, 0.774);
     color: ghostwhite;
+    font-family: 'Oswald', sans-serif;
     
 }
 
 .tabla-prod2{
     position: right;
+    font-family: 'Oswald', sans-serif;
 }
 
 .todo{
     display: block;
+    font-family: 'Oswald', sans-serif;
 }
 
 .card-pedido{
     background-color: rgba(0, 0, 0, 0.753);
     color: white;
+    font-family: 'Oswald', sans-serif;
 }
 
 #fotoMesa{
     background-color: rgba(10, 10, 10, 0.774);
+    font-family: 'Oswald', sans-serif;
 }
 
 .miInput{
     background-color: rgba(4, 4, 29, 0.637);
     color: beige;
+    font-family: 'Oswald', sans-serif;
 }
