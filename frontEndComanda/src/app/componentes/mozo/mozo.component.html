@@ -1,5 +1,5 @@
 <body class="jumbotron">
-<div>
+  <div *ngIf="muestraAltaPedido">
   
       <div class="tabla-prod">       
         <input type="text" placeholder="Busqueda" class="form-control miInput" [(ngModel)]="busqueda">
@@ -73,10 +73,13 @@
             <app-csv *ngIf="elPedido.id" [pedido]="elPedido"></app-csv>
           </div> -->
         </div>
-      </div>
-    
-  
-</div>
+      </div> 
+  </div>
+
+  <!-- MUESTRA MESAS -->
+  <div *ngIf= "muestraMesas">
+    <app-mesas></app-mesas>
+  </div>
 </body>
 
 

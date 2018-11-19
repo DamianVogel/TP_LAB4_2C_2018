@@ -51,6 +51,7 @@ import { BarTenderComponent } from './componentes/bar-tender/bar-tender.componen
 import { CandyManComponent } from './componentes/candy-man/candy-man.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MesasComponent } from './componentes/mesas/mesas.component';
+import {DialogModule} from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -105,7 +106,8 @@ import { MesasComponent } from './componentes/mesas/mesas.component';
     MatInputModule,
     AccordionModule,
     FileUploadModule,
-    MatTabsModule
+    MatTabsModule,
+    DialogModule
 
   ],
   providers: [

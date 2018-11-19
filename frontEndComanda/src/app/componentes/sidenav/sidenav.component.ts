@@ -26,6 +26,8 @@ export class SidenavComponent implements OnInit {
   notes: Section [];
   muestraSide:boolean = false;
   muestraMapa:boolean = false;
+  muestraMesas: boolean = false;
+  muestraAltaPedido: boolean = false;
 
   imagen:any;
 
@@ -212,6 +214,19 @@ export class SidenavComponent implements OnInit {
     this.muestraSide=false;
     this.muestraMapa=true;
   
+  }
+
+  MuestraAltaPedido(){
+    this.muestraAltaPedido=true;
+    this.muestraMapa=false;
+
+  }
+
+  MuestraMesas(){
+    this.muestraMesas = true;
+    this.muestraAltaPedido = false;
+
+
   }
 
 

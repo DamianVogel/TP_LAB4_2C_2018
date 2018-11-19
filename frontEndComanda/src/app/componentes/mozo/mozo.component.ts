@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Producto } from '../../clases/producto';
 import { Pedido } from '../../clases/pedido';
 import { PedidoService } from '../../servicios/pedido.service';
@@ -22,7 +22,9 @@ export class MozoComponent implements OnInit {
   busqueda:string;
 
 
-
+  @Input() muestraAltaPedido: boolean;
+  @Input() muestraMapa: boolean;
+  @Input() muestraMesas: boolean;
 
   constructor(
             private httpProd: ProductosService, 
