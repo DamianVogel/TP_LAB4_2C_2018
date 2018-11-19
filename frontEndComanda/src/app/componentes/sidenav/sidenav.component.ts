@@ -28,6 +28,7 @@ export class SidenavComponent implements OnInit {
   muestraMapa:boolean = false;
   muestraMesas: boolean = false;
   muestraAltaPedido: boolean = false;
+  muestraPendientes: boolean = false;
 
   imagen:any;
 
@@ -225,10 +226,14 @@ export class SidenavComponent implements OnInit {
   MuestraMesas(){
     this.muestraMesas = true;
     this.muestraAltaPedido = false;
-
-
+    this.muestraPendientes = false;
   }
 
+  MuestraPendientes(){
+    this.muestraMesas = false;
+    this.muestraAltaPedido = false;
+    this.muestraPendientes = true;
+  }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(CambiarImagenComponent, {

@@ -10,10 +10,11 @@ export class AdminComponent implements OnInit {
 
 
 
-  //muestra:boolean = false;
   
   @Input() muestra: boolean;
   @Input() muestraMapa: boolean;
+  @Input() muestraMesas: boolean;
+  @Input() muestraPendientes: boolean;
 
   constructor() { }
 
