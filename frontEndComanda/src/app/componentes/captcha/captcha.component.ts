@@ -23,16 +23,15 @@ export class CaptchaComponent implements OnInit {
     this.Asignar()
    }
 
-    Spinner()
-{
-  this.spinner= !this.spinner;
-  console.log(this.spinner);
-}
+  Spinner(){
+    this.spinner= !this.spinner;
+    console.log(this.spinner);
+  }
 
   Asignar()
   {
 
-    let numero = Math.round((Math.random() * 3));
+    let numero = Math.round((Math.random() * 4));
     console.log(numero);
     if(numero == 1 )
     {
