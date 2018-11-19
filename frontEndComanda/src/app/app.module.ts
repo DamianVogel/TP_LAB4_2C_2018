@@ -50,6 +50,7 @@ import { CheffComponent } from './componentes/cheff/cheff.component';
 import { BarTenderComponent } from './componentes/bar-tender/bar-tender.component';
 import { CandyManComponent } from './componentes/candy-man/candy-man.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { MesasComponent } from './componentes/mesas/mesas.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     BotonServirComponent,
     CheffComponent,
     BarTenderComponent,
-    CandyManComponent
+    CandyManComponent,
+    MesasComponent
   ],
   imports: [
     BrowserModule,

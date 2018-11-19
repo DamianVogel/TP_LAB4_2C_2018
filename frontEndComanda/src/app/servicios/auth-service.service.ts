@@ -117,5 +117,22 @@ export class AuthService {
       return 1000;
     
   }
+
+  public GetPayLoad():any {
+    if(localStorage.getItem('token'))
+    {
+      return this.jwtHelper.decodeToken(localStorage.getItem('token')).data;
+    }
+    else{
+      return false;
+    }
+   
+  }
+
+
+
+
+
+
 }
 
