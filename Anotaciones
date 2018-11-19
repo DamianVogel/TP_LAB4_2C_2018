@@ -1,8 +1,24 @@
 PENDIENTES:
 
 
--COMPONENTES PERFILES
--IMAGEN DE AVATAR
+
+-IMAGENES
+    imagenes de fondo para perfiles
+    imagenes de fondo de los perfiles en avatar
+
+-PERFIL DE CLIENTE
+-DIRECTIVAS
+-PIPES
+-QUITAR ICONOS QUE NO FUNCIONAN
+    -REVISAR BARRA IZQUIERDA DE NAVEGACION
+-TRABAJAR CON EL SPINNER -> DELAY.
+
+
+-COMBO BOX PARA PERFILES
+    ALTA DE EMPLEADO
+-COMBO BOX PARA MESAS
+    ALTA DE PEDIDO
+
 
 
 
@@ -30,10 +46,7 @@ PENDIENTES:
     -> insert_photo
 
 
--> LOGOUT
-    -> exit_to_app ICON
 
--> JWT
 
 -> SPINNER
 

@@ -23,6 +23,7 @@ class MWparaAutentificar
 		$objDelaRespuesta->respuesta="";
 		$ArrayDeParametros = $request->getParsedBody();
 		$token=$ArrayDeParametros['token'];
+		$payload=AutentificadorJWT::ObtenerData($token);
 		
 	   
 		if($request->isGet())
@@ -86,7 +87,6 @@ class MWparaAutentificar
 		  
 		 //$response->getBody()->write('<p>vuelvo del verificador de credenciales</p>');
 		 return $response;   
-		 //return $ArrayDeParametros;
 	}
 
 }
