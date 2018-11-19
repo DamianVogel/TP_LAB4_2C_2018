@@ -146,6 +146,13 @@ export class LoginComponent implements OnInit {
             password: ['1234', Validators.required]
         });
     }
+    
+    TestCliente(){
+        this.loginForm = this.formBuilder.group({
+            username: ['Cliente', Validators.required],
+            password: ['1234', Validators.required]
+        });
+    }
 
 
 

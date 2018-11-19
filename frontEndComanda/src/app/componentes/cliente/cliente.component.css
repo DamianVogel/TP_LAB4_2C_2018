@@ -1,0 +1,9 @@
+.container{
+    background-color:rgb(246, 248, 250);
+    margin-top: 15%
+}
+
+.container div{
+    display: flex;
+    padding: 3%;
+}

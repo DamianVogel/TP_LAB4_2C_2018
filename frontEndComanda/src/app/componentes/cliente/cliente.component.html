@@ -1,35 +1,32 @@
 <div class="container">
-  <div class="row">
-    <div class="form-ingreso">
-      <h3>Ingrese pedido y mesa</h3>
-      <div class="form-goup">
-        <input type="text" class="form-control" [(ngModel)]="idPedido" placeholder="Pedido"> <br>
-        <input type="text" class="form-control" [(ngModel)]="idMesa" placeholder="Mesa"><br>
-        <button class="btn btn-primary" (click)="TraerTiempo()">Traer</button>
-      </div>
-    </div>
+    <h3>Ingrese pedido</h3>
+  <div class="row form-ingreso form-goup">     
+    <input type="text" class="form-control" [(ngModel)]="idPedido" placeholder="Pedido">        
+    <button class="btn btn-primary" (click)="TraerTiempo()">Traer</button>       
+  </div>
+   
     <div class="info-cliente col-sm-8">
       <h1>
         {{idPedido}}
       </h1>
-      <table style="color: white" class="table">
+      <table style="color:black" class="table">
         <thead>
           <th>idDetalle</th>
           <th>Producto</th>
           <th>Tiempo Restante</th>
-        </thead>
+       </thead>
         <tbody>
           <tr *ngFor="let detalle of detalles">
             <td> {{detalle.idDetalle}} </td>
             <td> {{detalle.producto}} </td>
-            <td ColorTimer [tiempo]="detalle.tiempoRestante">
-              <app-cronometro [tEspera]="detalle.tiempoRestante"></app-cronometro>
-            </td>
+          <!-- <td ColorTimer [tiempo]="detalle.tiempoRestante">
+            <app-cronometro [tEspera]="detalle.tiempoRestante"></app-cronometro> </td> -->
+          
           </tr>
         </tbody>
       </table>
 
     </div>
-  </div>
+  
 </div>
  
