@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-11-2018 a las 22:05:04
+-- Tiempo de generación: 19-11-2018 a las 23:07:13
 -- Versión del servidor: 10.1.22-MariaDB
 -- Versión de PHP: 7.1.4
 
@@ -42,7 +42,7 @@ CREATE TABLE `empleados` (
 --
 
 INSERT INTO `empleados` (`id`, `usuario`, `clave`, `sector`, `estado`, `perfil`) VALUES
-(1, 'amorelli@gmail.com', '1234', 'Dueño', 'Activo', 'admin'),
+(1, 'duenio', '1234', 'Dueño', 'Activo', 'admin'),
 (9, 'mozo', '1234', 'barra', 'suspendido', 'mozo'),
 (10, 'candyman', '1234', 'candy bar', 'Activo', 'mozo');
 
@@ -80,7 +80,22 @@ INSERT INTO `facturas` (`numero`, `mesa`, `importe`, `fecha`) VALUES
 (00000014, 00001, 70, '2018-11-15'),
 (00000015, 00002, 70, '2018-11-15'),
 (00000016, 00003, 0, '2018-11-15'),
-(00000017, 00003, 70, '2018-11-15');
+(00000017, 00003, 70, '2018-11-15'),
+(00000018, 00001, 0, '2018-11-19'),
+(00000019, 00001, 0, '2018-11-19'),
+(00000020, 00002, 70, '2018-11-19'),
+(00000021, 00002, 0, '2018-11-19'),
+(00000022, 00002, 0, '2018-11-19'),
+(00000023, 00002, 0, '2018-11-19'),
+(00000024, 00004, 70, '2018-11-19'),
+(00000025, 00001, 0, '2018-11-19'),
+(00000026, 00001, 0, '2018-11-19'),
+(00000027, 00001, 0, '2018-11-19'),
+(00000028, 00001, 0, '2018-11-19'),
+(00000029, 00001, 0, '2018-11-19'),
+(00000030, 00002, 0, '2018-11-19'),
+(00000031, 00001, 370, '2018-11-19'),
+(00000032, 00001, 0, '2018-11-19');
 
 -- --------------------------------------------------------
 
@@ -99,8 +114,8 @@ CREATE TABLE `mesas` (
 --
 
 INSERT INTO `mesas` (`idMesa`, `estado`, `canUsos`) VALUES
-(00001, 'Cerrada', 18),
-(00002, 'Cerrada', 82),
+(00001, 'con cliente esperando pedido', 22),
+(00002, 'Cerrada', 86),
 (00003, 'Cerrada', 15),
 (00004, 'Cerrada', 4),
 (00005, 'Cerrada', 4),
@@ -132,11 +147,25 @@ INSERT INTO `pedidodetalle` (`idDetalle`, `idPedido`, `producto`, `idEmpleado`, 
 (2, 00001, 'Cerveza', 0, 'facturado', '2018/11/14 1:35', '', 'chopera'),
 (3, 00002, 'Coca-cola', 0, 'facturado', '2018/11/14 2:02', '2018/11/15 2:41', 'barra'),
 (4, 00003, 'Coca-cola', 0, 'facturado', '2018/11/14 2:41', '2018/11/15 2:41', 'barra'),
-(5, 00004, 'Cerveza', 0, 'facturado', '2018/11/14 3:12', '', 'chopera'),
+(5, 00004, 'Cerveza', 0, 'facturado', '2018/11/18 19:55', '2018/11/18 19:50', 'chopera'),
 (6, 00005, 'Cerveza', 0, 'facturado', '2018/11/14 3:47', '', 'chopera'),
 (7, 00006, 'Cerveza', 0, 'facturado', '2018/11/15 5:19', '2018/11/15 5:14', 'chopera'),
 (8, 00007, 'Cerveza', 0, 'facturado', '2018/11/15 5:22', '2018/11/15 5:17', 'chopera'),
-(9, 00008, 'Cerveza', 0, 'facturado', '2018/11/15 5:26', '2018/11/15 5:21', 'chopera');
+(9, 00008, 'Cerveza', 0, 'facturado', '2018/11/15 5:26', '2018/11/15 5:21', 'chopera'),
+(10, 00009, 'Cerveza', 0, 'facturado', '2018/11/18 20:06', '2018/11/18 20:02', 'chopera'),
+(11, 00010, 'Cerveza', 0, 'facturado', '', '', 'chopera'),
+(12, 00011, 'Helado', 0, 'facturado', '', '', 'candy'),
+(13, 00011, 'Cerveza', 0, 'facturado', '', '', 'chopera'),
+(14, 00012, 'Coca-cola', 0, 'facturado', '', '', 'barra'),
+(15, 00012, 'Coca-cola', 0, 'facturado', '', '', 'barra'),
+(16, 00012, 'Coca-cola', 0, 'facturado', '', '', 'barra'),
+(17, 00013, 'Coca-cola', 0, 'facturado', '', '', 'barra'),
+(18, 00014, 'Pizza', 0, 'facturado', '', '', 'cocina'),
+(19, 00015, 'Cerveza', 0, 'facturado', '2018/11/19 17:01', '2018/11/19 16:56', 'chopera'),
+(20, 00015, 'Coca-cola', 0, 'facturado', '2018/11/19 17:06', '2018/11/19 16:56', 'barra'),
+(21, 00015, 'Pizza', 0, 'facturado', '2018/11/19 17:01', '2018/11/19 16:56', 'cocina'),
+(22, 00015, 'Flan', 0, 'facturado', '2018/11/19 17:01', '2018/11/19 16:56', 'candy'),
+(23, 00016, 'Coca-cola', 0, 'pendiente', '', '', 'barra');
 
 -- --------------------------------------------------------
 
@@ -163,7 +192,15 @@ INSERT INTO `pedidos` (`id`, `idMesa`, `tiempoInicio`, `fotoMesa`) VALUES
 (00005, 00005, '2018/11/14 3:17,38', './fotos/5.jpg'),
 (00006, 00001, '2018/11/15 5:14,21', './fotos/1.jpg'),
 (00007, 00002, '2018/11/15 5:17,44', './fotos/2.jpg'),
-(00008, 00003, '2018/11/15 5:20,57', './fotos/3.jpg');
+(00008, 00003, '2018/11/15 5:20,57', './fotos/3.jpg'),
+(00009, 00002, '2018/11/18 20:00,58', './fotos/2.jpg'),
+(00010, 00001, '2018/11/18 20:07,47', './fotos/1.jpg'),
+(00011, 00002, '2018/11/18 23:58,14', './fotos/2.jpg'),
+(00012, 00001, '2018/11/19 16:29,37', './fotos/1.jpg'),
+(00013, 00002, '2018/11/19 16:30,52', './fotos/2.jpg'),
+(00014, 00002, '2018/11/19 16:44,43', './fotos/2.jpg'),
+(00015, 00001, '2018/11/19 16:55,46', './fotos/1.jpg'),
+(00016, 00001, '2018/11/19 21:32,06', './fotos/1.jpg');
 
 -- --------------------------------------------------------
 
@@ -455,19 +492,13 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `clave`, `perfil`, `sexo`, `estado`) VALUES
-(1, 'admin@gmail.com', 'admin', 'admin', 'Hombre', 'Activo'),
-(2, 'mozo1@gmail.com', '1234', 'mozo', 'Hombre', 'activo'),
-(3, 'cocina1@gmail.com', '1234', 'cocina', 'Mujer', 'activo'),
-(4, 'barra1@gmail.com', '1234', 'barra', 'Hombre', 'activo'),
-(5, 'candy1@gmail.com', '1234', 'candy', 'Mujer', 'activo'),
-(6, 'cocina2@gmail.com', '1324', 'cocina', 'Hombre', 'activo'),
-(8, 'chopera1@gmail.com', '1234', 'chopera', 'Hombre', 'activo'),
-(9, 'mozo2@gmail.com', '1234', 'mozo', 'Mujer', 'activo'),
-(10, 'barra2@gmail.com', '1234', 'barra', 'Mujer', 'activo'),
-(11, 'chopera2@gmail.com', '1234', 'chopera', 'Hombre', 'activo'),
-(12, 'cliente2@gmail.com', '1324', 'cliente', 'Hombre', 'activo'),
-(13, 'cliente1@gmail.com', '1234', 'cliente', 'Hombre', 'activo'),
-(14, 'cacho@gmail.com', '1234', 'admin', 'Hombre', 'Activo');
+(1, 'Admin', 'admin', 'admin', 'Hombre', 'Activo'),
+(2, 'Mozo', '1234', 'mozo', 'Hombre', 'activo'),
+(3, 'Cheff', '1234', 'cocina', 'Mujer', 'activo'),
+(4, 'BarTender', '1234', 'barra', 'Hombre', 'activo'),
+(5, 'CandyMan', '1234', 'candy', 'Mujer', 'activo'),
+(8, 'BirraMan', '1234', 'chopera', 'Hombre', 'activo'),
+(12, 'Cliente', '1234', 'cliente', 'femenino', 'Activo');
 
 --
 -- Índices para tablas volcadas
@@ -535,7 +566,7 @@ ALTER TABLE `empleados`
 -- AUTO_INCREMENT de la tabla `facturas`
 --
 ALTER TABLE `facturas`
-  MODIFY `numero` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `numero` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT de la tabla `mesas`
 --
@@ -545,12 +576,12 @@ ALTER TABLE `mesas`
 -- AUTO_INCREMENT de la tabla `pedidodetalle`
 --
 ALTER TABLE `pedidodetalle`
-  MODIFY `idDetalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `idDetalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
@@ -565,7 +596,7 @@ ALTER TABLE `sesiones`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
