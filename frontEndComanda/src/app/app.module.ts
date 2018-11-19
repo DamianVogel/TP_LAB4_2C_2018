@@ -56,6 +56,7 @@ import { UsuariosComponent } from './componentes/usuarios/usuarios.component';
 import { BotonSuspenderComponent } from './componentes/boton-suspender/boton-suspender.component';
 import { BotonBorrarUsuarioComponent } from './componentes/boton-borrar-usuario/boton-borrar-usuario.component';
 import { CaptchaComponent } from './componentes/captcha/captcha.component';
+import { ClienteComponent } from './componentes/cliente/cliente.component';
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { CaptchaComponent } from './componentes/captcha/captcha.component';
     UsuariosComponent,
     BotonSuspenderComponent,
     BotonBorrarUsuarioComponent,
-    CaptchaComponent
+    CaptchaComponent,
+    ClienteComponent
   ],
   imports: [
     BrowserModule,
