@@ -15,66 +15,69 @@ class SesionApi
 	    $usuario=$ArrayDeParametros['usuario'];
         $clave=$ArrayDeParametros['clave'];
   
-try
-{
+        try{
 
-    $usuario=Usuario::ValidarUsuario($usuario,$clave);
-    //$sesion= new Sesion();
-    //$sesion->idEmpleado=$usuario->id;
-    //$sesion->horaInicio= date('Y/m/d G:i,s');
-    //$idSesion=$sesion->IniciarSesion();
-    $datos = array( 'usuario' => $usuario->usuario,
-                    'perfil' => $usuario->perfil, 
-                    'idUsuario' => $usuario->id
-                    //'idSesion' => $idSesion
-                    );
-    $token= AutentificadorJWT::CrearToken($datos);
-    $respuesta= array('token'=>$token,'datos'=> $datos);
+            $usuario=Usuario::ValidarUsuario($usuario,$clave);
+            
+            if($usuario){
+                //$sesion= new Sesion();
+                //$sesion->idEmpleado=$usuario->id;
+                //$sesion->horaInicio= date('Y/m/d G:i,s');
+                //$idSesion=$sesion->IniciarSesion();
+                $datos = array( 'usuario' => $usuario->usuario,
+                                'perfil' => $usuario->perfil, 
+                                'idUsuario' => $usuario->id
+                                //'idSesion' => $idSesion
+                                );
+                $token= AutentificadorJWT::CrearToken($datos);
+                $respuesta= array('token'=>$token,'datos'=> $datos);
 
-}
-catch(Exception  $e)
-    {
-
-       $respuesta->error = $e->getMessage();
-
-    }
-
-		return $response->withJson($respuesta, 200);		
-}
-
-public static function CerrarSesion($request, $response)
-{
-    
-    try
-    {
-    
-        $respuesta= new stdclass();
-        $ArrayDeParametros=$request->getParsedBody();
-        $token=$ArrayDeParametros["token"];
-        $payload=AutentificadorJWT::ObtenerData($token);
-
-        $idSesion=$payload->idSesion;
-        $fechaFinal=date('Y/m/d G:i,s');
-        
-        $ok=Sesion::CerrarSesion($idSesion, $fechaFinal);
-        
-
-        if($ok)
-        {
-            $respuesta="Cerraste la sesion con exito.";
+                $respuesta = $response->withJson($respuesta, 200);               
+            }
+            else{
+                $respuesta = $response->withJson($respuesta,201);
+            }                
+                            
+        }
+        catch(Exception  $e){
+            $respuesta->error = $e->getMessage();
+            $respuesta = $response->withJson($respuesta, 500);
         }
 
+        return $respuesta;
+        //return $response->withJson($respuesta, 200);		
     }
- catch(Exception $e)
-        {
+
+    public static function CerrarSesion($request, $response){
+    
+        try{    
+    
+            $respuesta= new stdclass();
+            $ArrayDeParametros=$request->getParsedBody();
+            $token=$ArrayDeParametros["token"];
+            $payload=AutentificadorJWT::ObtenerData($token);
+
+            $idSesion=$payload->idSesion;
+            $fechaFinal=date('Y/m/d G:i,s');
+            
+            $ok=Sesion::CerrarSesion($idSesion, $fechaFinal);
+        
+
+            if($ok)
+            {
+                $respuesta="Cerraste la sesion con exito.";
+            }
+
+        }
+        catch(Exception $e){
             $respuesta= $e->getMessage();
         }
 
-         return $response->withJson($respuesta, 200);		
+        return $response->withJson($respuesta, 200);		
 
-}
+    }
 
-/////FINAL CLASE///////
+    /////FINAL CLASE///////
 
 }
 
