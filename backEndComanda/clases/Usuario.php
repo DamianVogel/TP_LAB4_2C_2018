@@ -184,7 +184,7 @@ class Usuario
 			$consulta->execute();
 			$usuarioBuscado= $consulta->fetchObject('Usuario');			
 
-				return $usuarioBuscado;
+			return $usuarioBuscado;
 			  
 	}
 
