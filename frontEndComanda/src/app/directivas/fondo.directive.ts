@@ -10,22 +10,22 @@ export class FondoDirective {
     this.perfil= auth.GetPayLoad().perfil;
     switch(this.perfil)
     {
-      case "admin": this.renderer.setElementStyle( this.element.nativeElement, 'background-image', "url('../../../assets/imagenes/bar-1869656_1280.jpg')");
+      // case "admin": this.renderer.setElementStyle( this.element.nativeElement, 'background-image', "url('../../../assets/imagenes/bar-1869656_1280.jpg')");
+     
+      // this.renderer.setElementStyle( this.element.nativeElement, 'background-position', "center center");
+      // this.renderer.setElementStyle( this.element.nativeElement, 'background-size', "cover");
+      // break;
+      // case "barra": this.renderer.setElementStyle( this.element.nativeElement, 'background-image', "url('../../../assets/imagenes/fondoBarra.jpg')");
+     
+      // this.renderer.setElementStyle( this.element.nativeElement, 'background-position', "center center");
+      // this.renderer.setElementStyle( this.element.nativeElement, 'background-size', "cover");
+      // break;
+      case "chopera": this.renderer.setElementStyle( this.element.nativeElement, 'background-image', "url('../../../assets/imagenes/choperafondo.jpg')");
      
       this.renderer.setElementStyle( this.element.nativeElement, 'background-position', "center center");
       this.renderer.setElementStyle( this.element.nativeElement, 'background-size', "cover");
       break;
-      case "barra": this.renderer.setElementStyle( this.element.nativeElement, 'background-image', "url('../../../assets/imagenes/fondoBarra.jpg')");
-     
-      this.renderer.setElementStyle( this.element.nativeElement, 'background-position', "center center");
-      this.renderer.setElementStyle( this.element.nativeElement, 'background-size', "cover");
-      break;
-      case "chopera": this.renderer.setElementStyle( this.element.nativeElement, 'background-image', "url('../../../assets/imagenes/beer-820011_1920.jpg')");
-     
-      this.renderer.setElementStyle( this.element.nativeElement, 'background-position', "center center");
-      this.renderer.setElementStyle( this.element.nativeElement, 'background-size', "cover");
-      break;
-      case "candy": this.renderer.setElementStyle( this.element.nativeElement, 'background-image', "url('../../../assets/imagenes/fondoCandy.jpg')");
+      case "candy": this.renderer.setElementStyle( this.element.nativeElement, 'background-image', "url('../../../assets/imagenes/candyfondo.jpg')");
      
       this.renderer.setElementStyle( this.element.nativeElement, 'background-position', "center center");
       this.renderer.setElementStyle( this.element.nativeElement, 'background-size', "cover");
@@ -35,20 +35,18 @@ export class FondoDirective {
       this.renderer.setElementStyle( this.element.nativeElement, 'background-position', "center center");
       this.renderer.setElementStyle( this.element.nativeElement, 'background-size', "cover");
       break;
-      case "cocina": this.renderer.setElementStyle( this.element.nativeElement, 'background-image', "url('../../../assets/imagenes/fondoCocina.jpg')");
+      case "cocina": this.renderer.setElementStyle( this.element.nativeElement, 'background-image', "url('../../../assets/imagenes/cocinafondo.jpg')");
      
       this.renderer.setElementStyle( this.element.nativeElement, 'background-position', "center center");
       this.renderer.setElementStyle( this.element.nativeElement, 'background-size', "cover");
       break;
-      case "cliente": this.renderer.setElementStyle( this.element.nativeElement, 'background-image', "url('../../../assets/imagenes/fondoCliente.jpg')");
+      case "cliente": this.renderer.setElementStyle( this.element.nativeElement, 'background-image', "url('../../../assets/imagenes/clientefondo.jpg')");
       this.renderer.setElementStyle( this.element.nativeElement, 'background-position', "center center");
       this.renderer.setElementStyle( this.element.nativeElement, 'background-repeat', "no-repeat");
       this.renderer.setElementStyle( this.element.nativeElement, 'background-size', "cover");
       break;
     }
-    /*this.renderer.setElementStyle( this.element.nativeElement, 'background-position', "center center");
-    this.renderer.setElementStyle( this.element.nativeElement, 'background-repeat', "no-repeat");
-    this.renderer.setElementStyle( this.element.nativeElement, 'background-size', "cover");*/
+    
    }
 
    

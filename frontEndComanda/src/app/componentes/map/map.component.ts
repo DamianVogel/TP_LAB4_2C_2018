@@ -10,8 +10,8 @@ declare var ol: any;
 export class MapComponent implements OnInit {
 
   
-  latitude: number = 18.5204;
-  longitude: number = 73.8567;
+  latitude: number = -34.66239839092499;
+  longitude: number = -58.364575803279855;
 
   map: any;
 
