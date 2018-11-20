@@ -30,7 +30,7 @@ button {
 
 
 .registro-body{
-    background-image: url(../../../assets/imagenes/registrofondo.jpg);
+    /* background-image: url(../../../assets/imagenes/registrofondo.jpg); */
     position: fixed;
     top: 0;
     bottom: 0;
