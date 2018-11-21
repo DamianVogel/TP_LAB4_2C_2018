@@ -10,6 +10,9 @@ export class PendientesComponent implements OnInit {
   spinner:boolean;
   listaPendientes: Array<any>;
   tiempoPreparacion:number;
+  muestraTabla: boolean;
+
+
   constructor(private httpServicio: PedidoService) {
 
     this.TraerTabla();
@@ -23,6 +26,11 @@ export class PendientesComponent implements OnInit {
       this.listaPendientes= JSON.parse(data._body);
       this.spinner=false;
       
+      if(this.listaPendientes.length > 0){
+        this.muestraTabla = true;
+      }
+
+
     });
     
    }

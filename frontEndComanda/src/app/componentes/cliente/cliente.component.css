@@ -1,9 +1,17 @@
 .container{
-    background-color:rgb(246, 248, 250);
+    /* background-color:rgb(246, 248, 250); */
+    background-color: rgba(29, 28, 28, 0.575);
     margin-top: 15%
 }
 
 .container div{
     display: flex;
     padding: 3%;
+}
+.tabla-pendientes{
+    background-color: rgba(29, 28, 28, 0.575);
+    padding: 10%;
+    justify-content: center;
+    position: center;
+    margin-top: 15%;
 }

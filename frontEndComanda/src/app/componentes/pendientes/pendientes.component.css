@@ -1,5 +1,9 @@
 .tabla-pendientes{
     background-color: rgba(29, 28, 28, 0.575);
+    padding: 10%;
+    justify-content: center;
+    position: center;
+    margin-top: 15%;
 }
 .miTabla{
     color: white;
