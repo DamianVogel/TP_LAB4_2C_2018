@@ -12,10 +12,10 @@
           </thead>
           <tbody >
             <tr *ngFor="let producto of (listaProductos | filtro: busqueda)">
-            
+              <td><app-boton-agregar [producto]="producto" (enviar)="AgregarAlPedido($event)"></app-boton-agregar></td>
               <td  estilo [tipo]="producto.responsable">{{producto.nombre}}</td>
               <td>{{producto.precio | currency: '$ ': true: '1.1-2'}}</td>
-            <td><app-boton-agregar [producto]="producto" (enviar)="AgregarAlPedido($event)"></app-boton-agregar></td> 
+            <!-- <td><app-boton-agregar [producto]="producto" (enviar)="AgregarAlPedido($event)"></app-boton-agregar></td>  -->
             </tr>
           </tbody>
         </table>
