@@ -57,14 +57,27 @@ export class CaptchaComponent implements OnInit {
     this.Spinner();
     decision == this.pedido ? this.ok=true : this.ok==false;
 
-    this.httpCaptcha.EnviarCaptcha(this.ok).subscribe((data)=>{
-       this.spinner=false
-      this.respuesta= JSON.parse(data._body).respuesta;
-      this.lanzador.emit(this.respuesta);
-      console.log(this.respuesta);
+    const interval = setInterval(() => {
+      this.spinner=false
+      this.httpCaptcha.EnviarCaptcha(this.ok).subscribe((data)=>{
       
-     
-    })
+        //this.spinner=false
+        this.respuesta= JSON.parse(data._body).respuesta;
+        this.lanzador.emit(this.respuesta);
+        console.log(this.respuesta);
+        
+       
+      })
+
+
+
+
+    }, 3000);
+
+    return () => {
+      clearInterval(interval);
+    }
+    
 
   }
   ngOnInit() {
