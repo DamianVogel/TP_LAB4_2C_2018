@@ -1,4 +1,11 @@
-table tbody{ 
-    font-family: 'Oswald', sans-serif;
- 
-  }
+
+.tabla-prod{
+    
+  background-color: rgba(10, 10, 10, 0.774);
+  color: ghostwhite;
+  font-family: 'Oswald', sans-serif;
+  margin-top: 15%;
+  padding: 5%;
+    
+}
+  

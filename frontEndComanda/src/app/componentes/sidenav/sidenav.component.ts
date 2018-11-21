@@ -221,6 +221,7 @@ export class SidenavComponent implements OnInit {
   MuestraAltaPedido(){
     this.muestraAltaPedido=true;
     this.muestraMapa=false;
+    this.muestraMesas=false;
 
   }
 
