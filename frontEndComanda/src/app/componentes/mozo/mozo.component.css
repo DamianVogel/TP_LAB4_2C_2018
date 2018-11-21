@@ -8,12 +8,16 @@
     background-color: rgba(10, 10, 10, 0.774);
     color: ghostwhite;
     font-family: 'Oswald', sans-serif;
+    margin-top: 15%;
+    padding: 2%;
     
 }
 
 .tabla-prod2{
     position: right;
     font-family: 'Oswald', sans-serif;
+    margin-top: 15%;
+    padding: 2%;
 }
 
 .todo{
@@ -43,5 +47,6 @@
     background-color: rgba(10, 10, 10, 0.774);
     color: ghostwhite;
     font-family: 'Oswald', sans-serif;
-    
+    margin-top: 15%;
+    padding: 2%;
 }

@@ -20,6 +20,7 @@ export class MozoComponent implements OnInit {
   mesa:number;
   elPedido:Pedido;
   busqueda:string;
+  mesas: Array<any> = [1,2,3,4];
 
 
   @Input() muestraAltaPedido: boolean;
