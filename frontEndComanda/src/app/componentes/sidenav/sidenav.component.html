@@ -31,7 +31,6 @@
       <mat-list   *ngSwitchCase="'admin'">
         
         <h3 mat-subheader class="h3-subheader" >La Comanda</h3>
-        
 
           <mat-list-item  class="mat-list">                     
             <mat-icon mat-list-icon md-36>assignment_ind</mat-icon>
@@ -85,68 +84,55 @@
 
        <!-- BIRRA -->
        <mat-list  *ngSwitchCase="'chopera'">
-          <h3 mat-subheader>Pedidos Pendientes</h3>
-          <mat-list-item *ngFor="let folder of folders">
+          <h3 mat-subheader class="mat-subheader">Pedidos</h3>
+          <mat-list-item class="mat-list" *ngFor="let folder of folders">
             <mat-icon mat-list-icon>assignment</mat-icon>
+           
             <h4 mat-line>{{folder.name}}</h4>
-            
-          </mat-list-item>
-          <mat-divider></mat-divider>
-          <h3 mat-subheader>Reportes</h3>
-          <mat-list-item *ngFor="let note of notes">
-            <mat-icon mat-list-icon>note</mat-icon>
-            <h4 mat-line>{{note.name}}</h4>
             
           </mat-list-item>
         </mat-list>
 
         <!-- CHEFF  -->
         <mat-list  *ngSwitchCase="'cocina'">
-          <h3 mat-subheader>Pedidos Pendientes</h3>
-          <mat-list-item *ngFor="let folder of folders">
+          <h3 mat-subheader class="mat-subheader">Pedidos</h3>
+          <mat-list-item class="mat-list" *ngFor="let folder of folders">
             <mat-icon mat-list-icon>assignment</mat-icon>
             <h4 mat-line>{{folder.name}}</h4>
             
           </mat-list-item>
-          <mat-divider></mat-divider>
+          <!-- <mat-divider></mat-divider>
           <h3 mat-subheader>Reportes</h3>
           <mat-list-item *ngFor="let note of notes">
             <mat-icon mat-list-icon>note</mat-icon>
             <h4 mat-line>{{note.name}}</h4>
             
-          </mat-list-item>
+          </mat-list-item> -->
         </mat-list>
 
         <!-- CANDYMAN  -->
         <mat-list  *ngSwitchCase="'candy'">
-          <h3 mat-subheader>Pedidos Pendientes</h3>
-          <mat-list-item *ngFor="let folder of folders">
+          <h3 mat-subheader class="mat-subheader">Pedidos</h3>
+          <mat-list-item class="mat-list" *ngFor="let folder of folders">
             <mat-icon mat-list-icon>assignment</mat-icon>
             <h4 mat-line>{{folder.name}}</h4>
             
           </mat-list-item>
-          <mat-divider></mat-divider>
+          <!-- <mat-divider></mat-divider>
           <h3 mat-subheader>Reportes</h3>
           <mat-list-item *ngFor="let note of notes">
             <mat-icon mat-list-icon>note</mat-icon>
             <h4 mat-line>{{note.name}}</h4>
             
-          </mat-list-item>
+          </mat-list-item> -->
         </mat-list>
 
         <!-- BARTENDER  -->
         <mat-list  *ngSwitchCase="'barra'">
-          <h3 mat-subheader>Pedidos Pendientes</h3>
-          <mat-list-item *ngFor="let folder of folders">
+          <h3 mat-subheader class="mat-subheader">Pedidos</h3>
+          <mat-list-item class="mat-list" *ngFor="let folder of folders">
             <mat-icon mat-list-icon>assignment</mat-icon>
             <h4 mat-line>{{folder.name}}</h4>
-            
-          </mat-list-item>
-          <mat-divider></mat-divider>
-          <h3 mat-subheader>Reportes</h3>
-          <mat-list-item *ngFor="let note of notes">
-            <mat-icon mat-list-icon>note</mat-icon>
-            <h4 mat-line>{{note.name}}</h4>
             
           </mat-list-item>
         </mat-list>
