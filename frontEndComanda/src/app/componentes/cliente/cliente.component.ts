@@ -28,13 +28,13 @@ export class ClienteComponent implements OnInit {
       this.idPedido=respuesta.idPedido;
       console.log(respuesta);
 
-      // if(this.idPedido.length > 0){
+      if(this.detalles.length > 0){
         this.muestraTabla = true;
-      // }
-      // else{
-      //   this.sinPendientes = true;
+      }
+      else{
+        this.sinPendientes = true;
         
-      // }
+      }
 
     })
   }
