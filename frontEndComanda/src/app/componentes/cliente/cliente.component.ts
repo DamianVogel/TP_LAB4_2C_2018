@@ -21,20 +21,20 @@ export class ClienteComponent implements OnInit {
   constructor(private httpPedido: PedidoService) { }
 
   TraerTiempo(){
-    this.httpPedido.TiempoRestante(this.idMesa, this.idPedido)
+    this.httpPedido.TiempoRestante(this.idPedido)
     .subscribe(data=>{
       let respuesta= JSON.parse(data._body);
       this.detalles=respuesta.detalles;
       this.idPedido=respuesta.idPedido;
-      console.log(this.idPedido);
+      console.log(respuesta);
 
-      if(this.idPedido.length > 0){
+      // if(this.idPedido.length > 0){
         this.muestraTabla = true;
-      }
-      else{
-        this.sinPendientes = true;
+      // }
+      // else{
+      //   this.sinPendientes = true;
         
-      }
+      // }
 
     })
   }

@@ -109,11 +109,11 @@ public static function ServirPedido($request, $response, $args)
 
 }
 
-public static function TiempoRestante($request, $response, $args)
-{
+public static function TiempoRestante($request, $response, $args){
+    
     $respuesta=new stdclass();
     $ArrayDeParametros = $request->getParsedBody();
-    $idMesa=$ArrayDeParametros['idMesa'];
+    //$idMesa=$ArrayDeParametros['idMesa'];
     $idPedido=$ArrayDeParametros['idPedido'];
     $detalles=Detalle::TraerDetalleDelPedido($idPedido);
 
@@ -121,25 +121,24 @@ public static function TiempoRestante($request, $response, $args)
 
     $arrayRespuesta=array();
 
-    foreach($detalles as $d)
-    {
-    if($d->estado=="en preparacion")
-    {
-        $detallesRespuesta= new stdclass();
-    $tp=strtotime($d->tiempoPreparacion);
-    $now=strtotime($ahora);
-    $tiempoRestante=$tp-$now;
-    if($tiempoRestante <= 0)
-        {
-            $tiempoRestante=0;
-        }
-    $detallesRespuesta->idDetalle=$d->idDetalle;
-    $detallesRespuesta->producto=$d->producto;
-    
-    $detallesRespuesta->tiempoRestante=date('i:s',$tiempoRestante);
+    foreach($detalles as $d){
+        if($d->estado=="en preparacion"){
+            $detallesRespuesta= new stdclass();
+            $tp=strtotime($d->tiempoPreparacion);
+            $now=strtotime($ahora);
+            $tiempoRestante=$tp-$now;
+            
+            if($tiempoRestante <= 0){
+                $tiempoRestante=0;
+            }
+        
+            $detallesRespuesta->idDetalle=$d->idDetalle;
+            $detallesRespuesta->producto=$d->producto;
+        
+            $detallesRespuesta->tiempoRestante=date('i:s',$tiempoRestante);
 
-    array_push($arrayRespuesta,$detallesRespuesta);
-    }
+            array_push($arrayRespuesta,$detallesRespuesta);
+        }
     }
    
     
