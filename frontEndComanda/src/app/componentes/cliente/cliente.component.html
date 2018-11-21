@@ -6,13 +6,13 @@
   </div>
    
     <div class="info-cliente col-sm-8" >
-      <h1 style="color:antiquewhite">
+      <h1>
         {{idPedido}}
       </h1>
-      <table style="color:antiquewhite" class="table">
+      <table  *ngIf="muestraTabla" style="color:antiquewhite" class="table">
         <thead>
           <th>idDetalle</th>
-          <th>Producto</th>
+          <th>Producto</th>   
           <th>Tiempo Restante</th>
        </thead>
         <tbody>
@@ -25,6 +25,12 @@
           </tr>
         </tbody>
       </table>
+
+      <div *ngIf="sinPendientes" class="tabla-pendientes" >
+          <table class="table miTabla" *ngIf="!muestraTabla">
+            <h3>NO HAY PEDIDOS PENDIENTES</h3>
+          </table>
+      </div>
 
     </div>
   

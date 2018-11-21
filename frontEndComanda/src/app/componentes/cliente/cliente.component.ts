@@ -15,6 +15,8 @@ export class ClienteComponent implements OnInit {
   valCocinero:number;
   valMesa:number;
   valRest:number;
+  muestraTabla: boolean;
+  sinPendientes: boolean;
 
   constructor(private httpPedido: PedidoService) { }
 
@@ -24,7 +26,15 @@ export class ClienteComponent implements OnInit {
       let respuesta= JSON.parse(data._body);
       this.detalles=respuesta.detalles;
       this.idPedido=respuesta.idPedido;
-      console.log(this.detalles);
+      console.log(this.idPedido);
+
+      if(this.idPedido.length > 0){
+        this.muestraTabla = true;
+      }
+      else{
+        this.sinPendientes = true;
+        
+      }
 
     })
   }
