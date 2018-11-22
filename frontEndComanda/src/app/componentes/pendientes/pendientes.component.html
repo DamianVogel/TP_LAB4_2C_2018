@@ -6,8 +6,8 @@
         <th>Producto</th>
         <th>Sector</th>
         <th>Estado</th>
-        <th>Tiempo preparacion</th>
-        <th>Accion</th>
+        <th *ngIf="perfil.perfil != 'admin'">Tiempo preparacion</th>
+        <th *ngIf="perfil.perfil != 'admin'">Accion</th>
       </thead>
       <tbody>
         <tr *ngFor="let detalle of listaPendientes" fondoEstado [estado]="detalle.estado">
@@ -15,7 +15,7 @@
           <td> {{detalle.producto}} </td>
           <td> {{detalle.sector}} </td>
           <td> {{detalle.estado}} </td>
-          <td> <select [(ngModel)]="detalle.tiempoPreparacion">
+          <td *ngIf="perfil.perfil != 'admin'"> <select [(ngModel)]="detalle.tiempoPreparacion">
               <option value="5">5</option>
               <option value="10">10</option>
               <option value="20">20</option>
@@ -23,17 +23,17 @@
             </select>
           </td>
           <td>
-            <app-boton-preparar *ngIf="detalle.estado=='pendiente'" (lanzador)="TraerTabla()" [id]="detalle.idDetalle"
+            <app-boton-preparar *ngIf="detalle.estado=='pendiente' && perfil.perfil != 'admin'" (lanzador)="TraerTabla()" [id]="detalle.idDetalle"
               [tiempoPreparacion]="detalle.tiempoPreparacion"></app-boton-preparar>
-            <app-boton-servir *ngIf="detalle.estado=='en preparacion'" (lanzador)="TraerTabla()" [idDetalle]="detalle.idDetalle"></app-boton-servir>
+            <app-boton-servir *ngIf="detalle.estado=='en preparacion' && perfil.perfil != 'admin'" (lanzador)="TraerTabla()" [idDetalle]="detalle.idDetalle"></app-boton-servir>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <div class="tabla-pendientes" >
-    <table class="table miTabla" *ngIf="!muestraTabla">
+  <div *ngIf="!muestraTabla" class="tabla-pendientes" >
+    <table class="table miTabla" >
       <h3>NO HAY PEDIDOS PENDIENTES</h3>
     </table>
   </div>

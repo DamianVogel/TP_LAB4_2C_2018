@@ -23,7 +23,7 @@ export class PedidoService {
   {
     
     let usuario = JSON.parse(localStorage.getItem('token'));
-    console.log(usuario);
+    
 
     return this.http.httpPost("Pedidos/PendientesEmpleado",{"token":usuario})
     .pipe(data =>{return data;});
@@ -42,7 +42,7 @@ export class PedidoService {
   {
     
     let token = JSON.parse(localStorage.getItem('token'));
-    console.log(token);
+    //console.log(token);
     
     
     let datos={

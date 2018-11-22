@@ -11,9 +11,14 @@ export class PendientesComponent implements OnInit {
   listaPendientes: Array<any>;
   tiempoPreparacion:number;
   muestraTabla: boolean;
+  perfil: any;
 
 
   constructor(private httpServicio: PedidoService) {
+
+    this.perfil = JSON.parse(localStorage.getItem('usuario'));
+
+    //console.log(this.perfil.perfil);
 
     this.TraerTabla();
 
