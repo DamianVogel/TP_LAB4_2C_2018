@@ -59,6 +59,19 @@ export class GenericoService {
     .pipe(catchError(this.handleError));
   }
 
+  public GoogleRecaptcha(response, secret):Observable<any>
+  {
+
+    let datos={
+      "secret": secret,
+      "response": response     
+    }
+
+    return this.http.post("https://www.google.com/recaptcha/api/siteverify",datos)
+        .pipe(data =>{return data;}); 
+
+  }
+
 
 
 

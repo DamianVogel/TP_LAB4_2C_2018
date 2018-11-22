@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { Validators, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { RegistroService } from '../../servicios/registro.service';
+import { GenericoService } from '../../servicios/generico.service';
 import { Usuario } from '../../clases/usuario';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -36,7 +37,8 @@ export class RegistroComponent implements OnInit {
   
 
   constructor(private builder: FormBuilder,
-              private _registro: RegistroService
+              private _registro: RegistroService,
+              private _generico: GenericoService
     ) {
       
     
@@ -94,6 +96,15 @@ export class RegistroComponent implements OnInit {
     //console.log(`Resolved captcha with response ${captchaResponse}:`);
     this.captchaResponseTs = `${captchaResponse}`;
     console.log(this.captchaResponseTs);
+    
+    let secret = '6Lc6P3gUAAAAAAKxp6goWmHKTc7TFA2tPgulrMtx'
+
+    this._generico.GoogleRecaptcha(this.captchaResponseTs, secret).subscribe(data =>{
+      console.log(data);
+    })
+  
+  
+  
   }
   
   
