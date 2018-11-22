@@ -61,6 +61,7 @@ import { FondoDirective } from './directivas/fondo.directive';
 import { RelojComponent } from './componentes/reloj/reloj.component';
 import { TiempoPipe } from './pipes/tiempo.pipe';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -94,7 +95,8 @@ import { TiempoPipe } from './pipes/tiempo.pipe';
     ClienteComponent,
     FondoDirective,
     RelojComponent,
-    TiempoPipe
+    TiempoPipe,
+    FiltroPipe
   ],
   imports: [
     BrowserModule,

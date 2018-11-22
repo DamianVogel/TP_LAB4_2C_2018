@@ -18,9 +18,9 @@ export class GenericoService {
 
 
   api="http://localhost/TP_LAB4_2C_2018/backEndComanda/";
-  //api="http://localhost/AUGUSTO/backAugusto/";
   
-  //api="https://dvlacomanda.000webhostapp.com/backEndComanda/"
+  
+  //api="http://dvlacomanda.000webhostapp.com/backEndComanda/";
   
   
   constructor(public http:Http) { }
