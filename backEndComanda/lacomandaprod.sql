@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-11-2018 a las 17:50:33
--- Versión del servidor: 10.1.32-MariaDB
--- Versión de PHP: 7.2.5
+-- Tiempo de generación: 22-11-2018 a las 03:57:20
+-- Versión del servidor: 10.1.22-MariaDB
+-- Versión de PHP: 7.1.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -114,12 +114,10 @@ CREATE TABLE `mesas` (
 --
 
 INSERT INTO `mesas` (`idMesa`, `estado`, `canUsos`) VALUES
-(00001, 'con cliente esperando pedido', 22),
-(00002, 'Cerrada', 86),
+(00001, 'con cliente comiendo', 25),
+(00002, 'con cliente comiendo', 88),
 (00003, 'Cerrada', 15),
-(00004, 'Cerrada', 4),
-(00005, 'Cerrada', 4),
-(00006, 'Cerrada', 3);
+(00004, 'Cerrada', 4);
 
 -- --------------------------------------------------------
 
@@ -165,7 +163,16 @@ INSERT INTO `pedidodetalle` (`idDetalle`, `idPedido`, `producto`, `idEmpleado`, 
 (20, 00015, 'Coca-cola', 0, 'facturado', '2018/11/19 17:06', '2018/11/19 16:56', 'barra'),
 (21, 00015, 'Pizza', 0, 'facturado', '2018/11/19 17:01', '2018/11/19 16:56', 'cocina'),
 (22, 00015, 'Flan', 0, 'facturado', '2018/11/19 17:01', '2018/11/19 16:56', 'candy'),
-(23, 00016, 'Coca-cola', 0, 'pendiente', '', '', 'barra');
+(23, 00016, 'Coca-cola', 0, 'en preparacion', '', '', 'barra'),
+(24, 00017, 'Negroni', 0, 'en preparacion', '2018/11/21 18:19', '', 'barra'),
+(25, 00018, 'Negroni', 0, 'en preparacion', '1970/01/01 1:00', '', 'barra'),
+(26, 00019, 'Lomo Strogonoff', 0, 'en preparacion', '2018/11/22 3:03', '', 'cocina'),
+(27, 00019, 'Martini', 0, 'pendiente', '', '', 'barra'),
+(28, 00019, 'Cerveza Rubia', 0, 'listo para servir', '2018/11/22 3:02', '2018/11/22 2:53', 'chopera'),
+(29, 00019, 'Cream Brulee', 0, 'pendiente', '', '', 'candy'),
+(30, 00020, 'Lomo Strogonoff', 0, 'en preparacion', '2018/11/22 3:17', '', 'cocina'),
+(31, 00021, 'Cerveza Rubia', 0, 'pendiente', '', '', 'chopera'),
+(32, 00021, 'Cream Brulee', 0, 'pendiente', '', '', 'candy');
 
 -- --------------------------------------------------------
 
@@ -200,7 +207,12 @@ INSERT INTO `pedidos` (`id`, `idMesa`, `tiempoInicio`, `fotoMesa`) VALUES
 (00013, 00002, '2018/11/19 16:30,52', './fotos/2.jpg'),
 (00014, 00002, '2018/11/19 16:44,43', './fotos/2.jpg'),
 (00015, 00001, '2018/11/19 16:55,46', './fotos/1.jpg'),
-(00016, 00001, '2018/11/19 21:32,06', './fotos/1.jpg');
+(00016, 00001, '2018/11/19 21:32,06', './fotos/1.jpg'),
+(00017, 00001, '2018/11/21 18:13,27', './fotos/1.jpg'),
+(00018, 00001, '2018/11/21 18:50,31', './fotos/1.jpg'),
+(00019, 00001, '2018/11/22 2:51,57', './fotos/1.jpg'),
+(00020, 00002, '2018/11/22 3:06,44', './fotos/2.jpg'),
+(00021, 00002, '2018/11/22 3:50,45', './fotos/2.jpg');
 
 -- --------------------------------------------------------
 
@@ -492,8 +504,8 @@ INSERT INTO `usuarios` (`id`, `usuario`, `clave`, `perfil`, `sexo`, `estado`) VA
 (3, 'Cheff', '1234', 'cocina', 'Mujer', 'activo'),
 (4, 'BarTender', '1234', 'barra', 'Hombre', 'activo'),
 (5, 'CandyMan', '1234', 'candy', 'Mujer', 'activo'),
-(8, 'BirraMan', '1234', 'chopera', 'Hombre', 'activo'),
-(12, 'Cliente', '1234', 'cliente', 'femenino', 'Activo');
+(8, 'BirraMan', '1234', 'chopera', 'Hombre', 'suspendido'),
+(15, 'Cliente', '1234', 'cliente', 'Hombre', 'Activo');
 
 --
 -- Índices para tablas volcadas
@@ -557,49 +569,41 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `empleados`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
 --
 -- AUTO_INCREMENT de la tabla `facturas`
 --
 ALTER TABLE `facturas`
   MODIFY `numero` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
-
 --
 -- AUTO_INCREMENT de la tabla `mesas`
 --
 ALTER TABLE `mesas`
-  MODIFY `idMesa` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
+  MODIFY `idMesa` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `pedidodetalle`
 --
 ALTER TABLE `pedidodetalle`
-  MODIFY `idDetalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
-
+  MODIFY `idDetalle` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
-
+  MODIFY `id` int(5) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT de la tabla `sesiones`
 --
 ALTER TABLE `sesiones`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=221;
-
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
