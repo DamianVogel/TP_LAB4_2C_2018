@@ -59,6 +59,7 @@ import { CaptchaComponent } from './componentes/captcha/captcha.component';
 import { ClienteComponent } from './componentes/cliente/cliente.component';
 import { FondoDirective } from './directivas/fondo.directive';
 import { RelojComponent } from './componentes/reloj/reloj.component';
+import { TiempoPipe } from './pipes/tiempo.pipe';
 
 @NgModule({
   declarations: [
@@ -92,7 +93,8 @@ import { RelojComponent } from './componentes/reloj/reloj.component';
     CaptchaComponent,
     ClienteComponent,
     FondoDirective,
-    RelojComponent
+    RelojComponent,
+    TiempoPipe
   ],
   imports: [
     BrowserModule,

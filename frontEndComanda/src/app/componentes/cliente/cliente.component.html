@@ -19,8 +19,8 @@
           <tr *ngFor="let detalle of detalles">
             <td> {{detalle.idDetalle}} </td>
             <td> {{detalle.producto}} </td>
-          <!-- <td ColorTimer [tiempo]="detalle.tiempoRestante">
-            <app-cronometro [tEspera]="detalle.tiempoRestante"></app-cronometro> </td> -->
+         
+            <app-reloj [tEspera]="detalle.tiempoRestante"></app-reloj> 
           
           </tr>
         </tbody>

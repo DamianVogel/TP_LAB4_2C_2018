@@ -12,14 +12,23 @@
         <input type="text" placeholder="Busqueda" class="form-control miInput" [(ngModel)]="busqueda">
         <table class="table table-hover ">
           <thead>
-            <th>Producto</th>
-            <th>Precio</th>
             <th>Accion</th>
+            <th>Producto</th>
+            <th>Sector</th>
+            <th>Precio</th>
+            
           </thead>
           <tbody >
             <tr *ngFor="let producto of (listaProductos | filtro: busqueda)">
               <td><app-boton-agregar [producto]="producto" (enviar)="AgregarAlPedido($event)"></app-boton-agregar></td>
-              <td  estilo [tipo]="producto.responsable">{{producto.nombre}}</td>
+              <td> {{producto.nombre}}</td>
+              <td>                   
+                  <mat-icon *ngIf="producto.responsable == 'cocina'"  >restaurant</mat-icon>
+                  <mat-icon *ngIf="producto.responsable == 'chopera'" >local_drink</mat-icon>
+                  <mat-icon *ngIf="producto.responsable == 'candy'"  >cake</mat-icon>
+                  <mat-icon *ngIf="producto.responsable == 'barra'"  >local_bar</mat-icon>
+              </td>
+               
               <td>{{producto.precio | currency: '$ ': true: '1.1-2'}}</td>
             <!-- <td><app-boton-agregar [producto]="producto" (enviar)="AgregarAlPedido($event)"></app-boton-agregar></td>  -->
             </tr>
