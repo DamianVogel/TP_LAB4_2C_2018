@@ -6,17 +6,14 @@
     </div> 
     
   <div *ngIf="!spinner && !respuesta" >
-    <div>
-      <mat-icon (click)="Ingresar('Arriba')" class="material-icons md-48">thumb_up</mat-icon>
-    </div>
-    <div>  
-      <mat-icon (click)="Ingresar('Abajo')" class="material-icons md-48">thumb_down</mat-icon> 
-    </div>
-    <div>  
-      <mat-icon (click)="Ingresar('Moto')" class="material-icons md-48">motorcycle</mat-icon> 
-    </div>
-    <div>  
-      <mat-icon (click)="Ingresar('Barco')" class="material-icons md-48">directions_boat</mat-icon> 
+    <div class="captcha">
+      <mat-icon  class="captcha" (click)="Ingresar('Arriba')" class="material-icons md-48">thumb_up</mat-icon>
+     
+      <mat-icon class="captcha" (click)="Ingresar('Abajo')" class="material-icons md-48">thumb_down</mat-icon> 
+     
+      <mat-icon class="captcha" (click)="Ingresar('Moto')" class="material-icons md-48">motorcycle</mat-icon> 
+     
+      <mat-icon class="captcha" (click)="Ingresar('Barco')" class="material-icons md-48">directions_boat</mat-icon> 
     </div>
   
   
