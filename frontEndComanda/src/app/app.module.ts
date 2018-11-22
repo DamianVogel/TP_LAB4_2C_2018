@@ -58,6 +58,7 @@ import { BotonBorrarUsuarioComponent } from './componentes/boton-borrar-usuario/
 import { CaptchaComponent } from './componentes/captcha/captcha.component';
 import { ClienteComponent } from './componentes/cliente/cliente.component';
 import { FondoDirective } from './directivas/fondo.directive';
+import { RelojComponent } from './componentes/reloj/reloj.component';
 
 @NgModule({
   declarations: [
@@ -90,7 +91,8 @@ import { FondoDirective } from './directivas/fondo.directive';
     BotonBorrarUsuarioComponent,
     CaptchaComponent,
     ClienteComponent,
-    FondoDirective
+    FondoDirective,
+    RelojComponent
   ],
   imports: [
     BrowserModule,
