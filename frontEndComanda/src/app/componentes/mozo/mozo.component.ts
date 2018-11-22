@@ -45,7 +45,7 @@ export class MozoComponent implements OnInit {
     
     this.httpProd.TraerProductos().subscribe(data=>{
       this.listaProductos= JSON.parse(data._body);
-      console.log(this.listaProductos);
+      
       
    });
    
@@ -71,7 +71,7 @@ export class MozoComponent implements OnInit {
       if(this.productosPedido[i].nombre == producto.nombre)
       {
         this.totalPedido-= producto.precio;
-        console.log("se va a borrar el producto " + this.productosPedido[i].nombre);
+        //console.log("se va a borrar el producto " + this.productosPedido[i].nombre);
         this.productosPedido.splice(i,1);
         break;
       }

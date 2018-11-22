@@ -58,8 +58,8 @@ export class LoginComponent implements OnInit {
             this.response = data;
             this.respuesta = JSON.parse(data._body);
             
-            console.log(this.response);
-            console.log(this.response.status);
+            // console.log(this.response);
+            // console.log(this.response.status);
 
             if (this.response.status == 200)
             {
@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit {
              
             }
             else{
-              alert("error");
+              alert("USUARIO O CLAVE INCORRECTA");
               //this.router.navigate(['/Login']); 
               this.submitted = false;
               this.loading = false;  
