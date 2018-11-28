@@ -81,6 +81,18 @@ export class SidenavComponent implements OnInit {
           this.imagen = './assets/imagenes/cocinaavatar.png';
       break;
 
+      case 'candy':
+          this.imagen = './assets/imagenes/candyavatar.png';
+      break;
+
+      case 'barra':
+      this.imagen = './assets/imagenes/barraavatar.png';
+      break;
+
+      case 'cliente':
+      this.imagen = './assets/imagenes/clienteavatar.png';
+      break;
+
 
     }
   }
