@@ -40,7 +40,7 @@ class EmpleadoApi extends Empleado implements IApiUsable
           $sector= $ArrayDeParametros['sector'];
         $clave= $ArrayDeParametros['clave'];
         $perfil= $ArrayDeParametros['perfil'];
-        $estado= "Activo";
+        $estado= "activo";
 
         $miEmpleado= new Empleado();
         $miEmpleado->usuario=$usuario;
