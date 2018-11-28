@@ -44,13 +44,14 @@ export class SidenavComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.imagen = './assets/imagenes/admin.png';
+    //this.imagen = './assets/imagenes/admin.png';
 
     this.usuario = JSON.parse(localStorage.getItem('usuario'));
     
     //console.log(this.usuario.datos.perfil);
 
     this.ItemsSideNav(this.usuario.perfil);
+    this.Avatar(this.usuario.perfil);
 
   }
 
@@ -62,6 +63,27 @@ export class SidenavComponent implements OnInit {
     
   }
 
+  Avatar(perfil){
+    switch (perfil) {
+      case 'admin':
+          this.imagen = './assets/imagenes/admin.png';
+      break;
+
+      case 'mozo':
+          this.imagen = './assets/imagenes/mozo.png';
+      break;
+    
+      case 'chopera':
+          this.imagen = './assets/imagenes/choperaavatar.png';
+      break;
+
+      case 'cocina':
+          this.imagen = './assets/imagenes/cocinaavatar.png';
+      break;
+
+
+    }
+  }
 
 
   ItemsSideNav(tipo){
