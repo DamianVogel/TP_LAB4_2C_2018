@@ -10,8 +10,9 @@
     <tr *ngFor="let mesa of listaMesas">
       <td> {{mesa.idMesa}} </td>
       <td> {{mesa.estado}} </td>
-      <td *ngIf="perfil=='admin'"> <button class="btn btn-primary" (click)="Cerrar(mesa.idMesa)">Cerrar</button></td>
-      <td *ngIf="perfil=='admin'"><button class="btn btn-success" (click)="Cobrar(mesa.idMesa)" >Cobrar</button> </td>
+      <td *ngIf="perfil=='admin' && mesa.estado == 'con cliente comiendo'"> <button class="btn btn-primary" (click)="Cerrar(mesa.idMesa)">Cerrar</button></td>
+      <td *ngIf="perfil=='admin' && mesa.estado != 'con cliente comiendo' && mesa.estado != 'cliente pagando'"><button class="btn btn-success" (click)="Cobrar(mesa.idMesa)" >Cobrar</button> </td>
+      <td *ngIf="perfil=='admin' && mesa.estado == 'cliente pagando'"><button class="btn btn-success" (click)="Cerrar(mesa.idMesa)" >Disponible</button> </td>
       <td><button *ngIf="mesa.estado == 'con cliente esperando pedido'" class="btn btn-warning" (click)="ServirMesa(mesa.idMesa)" >Servir Mesa</button> </td>
     </tr>
   </tbody>
